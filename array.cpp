@@ -39,8 +39,8 @@ int main(){
     for(int i = 0 ; i < n ; i++){
         if (arr[i]< 0 ){
             continue;
-            cout<< arr[i];
         }
+        cout<< arr[i]<<"\t";
     }
     
     return 0 ;
