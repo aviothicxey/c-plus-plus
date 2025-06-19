@@ -23,7 +23,7 @@ int main(){
 
 }
 */
-
+/*
 // SKIP NEGATIVE NUMBERS USING CONTINUE:
 #include<iostream>
 using namespace std;
@@ -44,4 +44,26 @@ int main(){
     }
     
     return 0 ;
+}
+*/
+
+//Sum of Even and Odd Numbers in an Array:
+
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10],evensum = 0, oddsum = 0;
+    for(int i = 0 ; i < 10 ; i++){
+        cout<<"enter "<<i+1 <<" element: ";
+        cin>> arr[i];
+        if(arr[i] % 2 == 0){
+            evensum = evensum + arr[i];
+        }
+        else{
+            oddsum = oddsum + arr[i];
+        }
+    }
+    cout<<evensum<<endl;
+    cout<<oddsum<<endl;
+    return 0;
 }
