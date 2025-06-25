@@ -7,13 +7,15 @@ int main(){
     int sum = 0;
     cout << "enter a number : ";
     cin >> num;
+    original = num;
+
     while(num != 0){
         rem = num % 10;
         sum = sum + (rem * rem * rem);
         num = num / 10 ;
     }
     if ( sum == original){
-        cout << original << "armstrong number";
+        cout << original << " is an armstrong number";
     }
     else{
         cout << original << "is not armstrong number ";
