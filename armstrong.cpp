@@ -32,6 +32,7 @@ int main() {
     return 0;
 }
 
+
 //display armstrong number between two intervals
 
 
