@@ -27,7 +27,7 @@ int main() {
     while (num > 0) {
         int digit = num % 10; 
         reversedNum = reversedNum * 10 + digit; 
-        num /= 10;
+        num = num / 10;
     }
     
     if (originalNum == reversedNum) {
