@@ -1,3 +1,4 @@
+//  q1 
 #include <iostream>
 using namespace std;
 class Student{
@@ -33,3 +34,35 @@ int main() {
     return 0;
 }
 
+
+// q2 : 
+
+#include<iostream>
+using namespace std;
+class Rectangle{
+    int width ;
+    public:
+    int length;
+    Rectangle(int w , int l){
+        width = w ;
+         length = l;
+    }
+    int area(){
+    return length*width;
+    }
+    int perimeter (){
+        return 2 * (length*width);
+    }
+    void display(int w){
+    width=w;
+    }
+    int output(){
+        return width;
+    };
+};
+int main(){
+    Rectangle R(1,4);
+    cout<< R.area()<<endl;
+    cout<< R.perimeter()<<endl;
+    return 0;
+}
