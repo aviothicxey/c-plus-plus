@@ -105,7 +105,7 @@ class bubbleSort{
     int count;
     public:
     void input(){
-        cout<<"enter the number of elements : ";\
+        cout<<"enter the number of elements : ";
         cin>>count;
         for(int i = 0 ; i < count ; i++){
             cout<<"enter element:"<<i<<" : "<<endl;
@@ -136,5 +136,53 @@ int main() {
     b.sortArray();
     b.showSortArray();
 
+    return 0;
+}
+
+
+
+
+
+//INSERT SORT : 
+
+
+// with class : 
+#include <iostream>
+using namespace std;
+class Insertionsorter{
+    int numbers[100];
+    int count ;
+    public:
+void input(){
+    cout<<"enter number of elements : ";
+    cin>> count;
+    for(int i = 0 ; i < count ; i++){
+        cout << " enter element "<< i << " : ";
+        cin >> numbers[i];
+    }
+}
+void sortArray(){
+    for (int i = 1 ; i < count ; i++){
+        int current = numbers[i];
+        int j = i-1;
+        while (j >= 0 && numbers[j] > current){
+            numbers[ j + 1 ] = numbers[j];
+            j--;
+        }
+        numbers[j+1] =  current ;
+    }
+}
+void display(){
+    cout << "Sorted Array : ";
+    for ( int  i = 0 ; i < count ; i++){
+        cout << numbers[i] << " " << endl;
+    }
+}
+};
+int main(){
+    Insertionsorter sort ;
+    sort.input();
+    sort.sortArray();
+    sort.display();
     return 0;
 }
