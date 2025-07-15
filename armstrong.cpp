@@ -54,31 +54,27 @@ int main() {
 #include<cmath>
 using namespace std;
 int main(){
-    int num,originalnum,n = 0, result =0;
-     cout<<"enter the number:"<<endl;
+  int num,originalNum,result = 0 , n = 0,remainder;
+  cout<<"enter the number:"<<endl;
   cin>>num;
-    originalnum = num;
-    while (originalnum!=0)
-    {
-        originalnum = originalnum/10;
-        n++;
-    }
-    while (originalnum!=0)
-    {
-       int remainder = originalnum % 10;
-        result = result + pow(remainder , n);
-        originalnum = originalnum / 10;
-    }
-    if (result == num)
-    {
-        cout<<"armstrong number .";
-    }
-    else{
-        cout<<"not armstrong.";
-    }
-    return 0;
-    
-    
-
-    
+  originalNum = num;
+  while(originalNum!= 0){
+     originalNum = originalNum / 10;
+     n++;
+  }
+  originalNum = num;
+  while (originalNum!=0)
+  {
+     remainder = originalNum % 10;
+     result = result + pow(remainder,n);
+     originalNum = originalNum / 10;
+  }
+  if(num == result){
+     cout<<"number is armstrong.";
+  }
+  else{
+     cout<<"number is not armstrong.";
+  }
+  return 0;
+  
 }
