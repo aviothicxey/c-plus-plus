@@ -28,25 +28,48 @@
 // }
 
 
-#include<iostream>
+// #include<iostream>
+// using namespace std;
+// int main(){
+//      int n;
+//      cout<<"enter number of elements in an array:";
+//      cin>>n;
+//      int arr[n];
+//      for(int i = 0 ; i < n ; i++ ){
+//           cout<<"enter element "<<i<<" : ";
+//           cin>>arr[i];
+//      }
+//      int target;
+//      cout<<"enter the target value you need to find : ";
+//      cin>>target;
+//      for(int i = 0 ; i < n ; i++){
+//           if(arr[i] == target){
+//                cout<<"found "<<target<<" at "<< i;
+//                break;
+//           }
+//      }
+//      return 0;
+// }
+
+
+#include <iostream>
 using namespace std;
 int main(){
-     int n;
-     cout<<"enter number of elements in an array:";
-     cin>>n;
-     int arr[n];
-     for(int i = 0 ; i < n ; i++ ){
-          cout<<"enter element "<<i<<" : ";
-          cin>>arr[i];
-     }
-     int target;
-     cout<<"enter the target value you need to find : ";
-     cin>>target;
-     for(int i = 0 ; i < n ; i++){
-          if(arr[i] = target){
-               cout<<"found "<<target<<" at "<< i;
-               break;
-          }
-     }
-     return 0;
+    int n ; 
+    
+    cin>>n;
+    int arr[n];
+    for(int i = 0 ; i <n ; i++){
+        cin>>arr[i];
+    }
+    for(int i = 0 ; i<n; i++){
+        int factorial = 1;
+        for(int j = 1 ; j <= arr[i];j++){
+            factorial = factorial * j;
+        }
+          cout <<factorial<<endl;
+    }
+  
+    return 0;
+    
 }

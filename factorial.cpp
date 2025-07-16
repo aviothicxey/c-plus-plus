@@ -11,3 +11,28 @@ int main(){
     cout<< "factorial of "<< x << " is "<< factorial<< endl;
     return 0;
 }
+
+
+
+//Testpad : 
+#include <iostream>
+using namespace std;
+int main(){
+    int n ; 
+    
+    cin>>n;
+    int arr[n];
+    for(int i = 0 ; i <n ; i++){
+        cin>>arr[i];
+    }
+    for(int i = 0 ; i<n; i++){
+        int factorial = 1;
+        for(int j = 1 ; j <= arr[i];j++){
+            factorial = factorial * j;
+        }
+          cout <<factorial<<endl;
+    }
+  
+    return 0;
+    
+}
