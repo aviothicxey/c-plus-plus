@@ -52,24 +52,65 @@
 // }
 
 
-#include <iostream>
+// #include <iostream>
+// using namespace std;
+// int main(){
+//     int n ; 
+    
+//     cin>>n;
+//     int arr[n];
+//     for(int i = 0 ; i <n ; i++){
+//         cin>>arr[i];
+//     }
+//     for(int i = 0 ; i<n; i++){
+//         int factorial = 1;
+//         for(int j = 1 ; j <= arr[i];j++){
+//             factorial = factorial * j;
+//         }
+//           cout <<factorial<<endl;
+//     }
+  
+//     return 0;
+    
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// void printWhenHundred(int i) {
+//     if (i > 100) return;  
+
+//     if (i == 100) {
+//         cout << "Aparna" << endl;
+//     } else {
+//         printWhenHundred(i + 1);
+//     }
+// }
+
+// int main() {
+//     printWhenHundred(1); 
+//     return 0;
+// }
+
+
+
+
+#include<iostream>
 using namespace std;
 int main(){
-    int n ; 
-    
-    cin>>n;
+    int n;
+    cout<<"Enter the number of elements: ";
+    cin>> n;
     int arr[n];
+    for(int i = 0; i < n; i++){
+        cout<< "Enter element : ";
+        cin>> arr[i];
+    }
     for(int i = 0 ; i <n ; i++){
-        cin>>arr[i];
+        if ( arr[i] < 0 ) continue;
+        cout<< arr[i]<<"\t";
     }
-    for(int i = 0 ; i<n; i++){
-        int factorial = 1;
-        for(int j = 1 ; j <= arr[i];j++){
-            factorial = factorial * j;
-        }
-          cout <<factorial<<endl;
-    }
-  
-    return 0;
     
+      
 }
