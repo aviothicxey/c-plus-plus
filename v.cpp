@@ -115,29 +115,63 @@
       
 // }
 
-#include <iostream>
+// #include <iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin >> n;
+//     int arr[n];
+//      int evensum = 0;
+//      int oddsum = 0;
+//      for (int i = 0 ; i < n ; i++){
+//         cout << "enter element : ";
+//         cin>> arr[i];
+//      }
+//      for (int i = 0 ; i < n ; i++){
+//         if (arr[i] % 2 == 0) {
+//             evensum = evensum + arr[i];
+//             evensum++;}
+//         else {
+//             oddsum = oddsum + arr[i];
+//             oddsum++;
+//         }
+//      }
+//      cout << evensum<<"\n";
+//      cout<<oddsum;
+//      return 0;
+
+// }
+
+
+// #include <iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter the number of elements: ";
+//     cin>>n;
+//     int arr[n];
+//     for(int i = 0 ; i < n;i++){
+//         cin>>arr[i];
+//     }
+//     int x = sizeof(arr)/sizeof(arr[0]);
+//     bool isSorted = true;
+//     for (int i = 1; i< x ; i++){
+//         if(arr[i] = arr[i-1]){
+//             isSorted = false;
+//             break;
+//         }
+//     }
+//     if(isSorted){
+//         cout<<"array is sorted";
+//     }
+//     else{
+//         cout<< "array is not sorted";
+//     }
+//     return 0;
+// }
+
+#include<iostream>
 using namespace std;
 int main(){
-    int n;
-    cin >> n;
-    int arr[n];
-     int evensum = 0;
-     int oddsum = 0;
-     for (int i = 0 ; i < n ; i++){
-        cout << "enter element : ";
-        cin>> arr[i];
-     }
-     for (int i = 0 ; i < n ; i++){
-        if (arr[i] % 2 == 0) {
-            evensum = evensum + arr[i];
-            evensum++;}
-        else {
-            oddsum = oddsum + arr[i];
-            oddsum++;
-        }
-     }
-     cout << evensum<<"\n";
-     cout<<oddsum;
-     return 0;
-
+    
 }

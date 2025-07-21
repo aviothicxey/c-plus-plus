@@ -11,7 +11,7 @@ int main(){
     int target ;
     cin >> target;
     for ( int i = 0 ; i < n ; i++){
-        for (int j = i+ 1 ; i < n ; j++ ){  // j starts from i+1 to avoid repeating and self-sum
+        for (int j = i+ 1 ; j < n ; j++ ){  // j starts from i+1 to avoid repeating and self-sum
             if ( arr[i] + arr[j] == target){  
             cout<<"["<<i << ", " << j << "]";
             return 0;
