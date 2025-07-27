@@ -55,18 +55,51 @@
 //     return 0;
 // }
 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int num;
+//     int reverse = 0;
+//     cout << " enter a number ";
+//     cin>> num;
+//     while ( num != 0){
+//         int digit = num % 10;
+//         reverse = reverse * 10 + digit ;
+//         num = num / 10;
+//     }
+//     cout << " reversed number : "<< reverse ;
+//     return 0;
+// }
+
+
+//REVERSE AN ARRAY USING CLASSES:
 #include<iostream>
 using namespace std;
-int main(){
-    int num;
-    int reverse = 0;
-    cout << " enter a number ";
-    cin>> num;
-    while ( num != 0){
-        int digit = num % 10;
-        reverse = reverse * 10 + digit ;
-        num = num / 10;
+class rev{
+    public:
+    void reverse (int arr[],int n){
+        int start = 0;
+        int end  = n-1;
+        while(start < end){
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start ++;
+            end --;
+        }
     }
-    cout << " reversed number : "<< reverse ;
+};
+int main(){
+    rev reve;
+    int  n;
+    cin>> n;
+    int arr[n];
+    for( int i = 0; i < n ; i++){
+        cin>> arr[i];
+    }
+    reve.reverse(arr,n);
+    for(int i = 0; i < n ; i++){
+        cout<< arr[i]<<' ';
+    }
     return 0;
 }
