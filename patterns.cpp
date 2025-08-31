@@ -80,3 +80,22 @@ int main() {
 }
 
 
+// 01234
+// 0123
+// 012
+// 01
+// 0
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+ for(int i = 0 ; i <= 4 ; i++){
+        for (int j = 0 ; j < 4 - i + 1  ; j++){
+            cout << j;
+        }
+        cout << endl;
+    }
+}
+
