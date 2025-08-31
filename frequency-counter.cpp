@@ -54,3 +54,32 @@ int main(){
     }
     return 0;
 }
+
+//Write a program to count the frequency of each character in a given lowercase string. 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str;
+    cout << "Enter a lowercase string: ";
+    getline(cin, str);
+
+    int freq[26] = {0};  // Array to store frequency of each character
+
+    for (char c : str) {
+        if (c >= 'a' && c <= 'z') {
+            freq[c - 'a']++;
+        }
+    }
+
+    cout << "\nFREQUENCY OF EACH CHARACTER IS:\n";
+    for (int i = 0; i < 26; i++) {
+        if (freq[i] > 0) {
+            cout << char(i + 'a') << " appears " << freq[i] << " times.\n";
+        }
+    }
+
+    return 0;
+}

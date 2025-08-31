@@ -18,7 +18,7 @@
 // }
 
 
-//FIBBONACCI USING CLASSES:
+//n-th FIBBONACCI USING CLASSES:
 
 #include <iostream>
 using namespace std;

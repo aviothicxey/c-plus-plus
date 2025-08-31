@@ -1,0 +1,7 @@
+difference between overriding and overloading function.?
+OVERRIDING is when a derived class provides a specific
+implementation of a function that is already defined in
+its base class. Overloading, on the other hand, is when
+multiple functions have the same name but different
+parameters (either in type or number) within the same 
+scope.

@@ -1,3 +1,5 @@
+//bank employee salary : classes
+
 #include<iostream>
 using namespace std;
 class Employee{
@@ -44,8 +46,6 @@ int main() {
     cin >> baseSalary;
     cout << "Enter performance grade (A/B/C): ";
     cin >> grade;
-
-    // Create object and use methods
     Employee emp;
     emp.details(name, id, baseSalary);
     emp.calculate(grade);

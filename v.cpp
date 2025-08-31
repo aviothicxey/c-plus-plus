@@ -170,8 +170,24 @@
 //     return 0;
 // }
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 int main(){
+    int n ;
+    cin>> n;
+    
+    while( n != 0){
+        int sum = 0 ;
+        int x ;
+        cin >> x ;
+        int arr[x-1];
+        for (int i = 0 ; i < x-1 ;i++){
+            cin >> arr[i];
+        }
+        for(int i = 0 ; i < x-1 ; i++){
+            sum = sum + arr[i];
+        }
+        cout<<("-" ,sum);
+    }
     
 }
