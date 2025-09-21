@@ -1,4 +1,4 @@
-/*
+
 //COUNT THE FREQUENCY OF ALPHABETS IN A STRING
 #include <iostream>
 using namespace std;
@@ -17,7 +17,7 @@ int main(){
     cout<<"Frequency of alphabets: "<<count<<endl;
     return 0;
 }
-    */
+    
 
 //COUNT FREQUENCY OF EACH ELEMENT IN AN ARRAY:
 #include <iostream>
