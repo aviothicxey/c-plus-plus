@@ -22,3 +22,18 @@ int main(){
     if(index != -1) cout << "Element found at index: " << index << endl;
     else cout << "Element not found" << endl;
 }
+
+
+
+//lower bound :
+int fumction(arr,target,n){
+    low = 0 ; high = n -1;ans = n;
+    while(low<=high){
+        mid = (low + high)/2;
+        if(arr[mid] >= target){
+            ans = mid;
+            high = mid -1;
+        }
+        else low = mid + 1;
+    }
+}
