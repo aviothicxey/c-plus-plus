@@ -103,3 +103,14 @@ int main(){
     }
     return 0;
 }
+
+//reverse words:
+//in java:
+/*
+String words[] = s.trim().split("\\s+");
+List<String> list = Arrays.asList(words);
+Collections.reverse(list);
+return String.join(" ",list);
+
+
+*/
