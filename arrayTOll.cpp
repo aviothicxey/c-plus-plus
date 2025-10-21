@@ -56,11 +56,84 @@ void print(node*head){
     }
     cout<<endl;
 }
+node*deletetail(node*head){
+    if(head == NULL || head-> next == NULL) return NULL;
+
+    node* temp = head;
+    while( temp->next->next != NULL){
+        temp =temp->next;
+    }
+    
+    delete temp->next;
+    temp->next = nullptr;
+
+    return head;
+}
+node*deletek(node*head , int k){
+    if(head == NULL) return head;
+    if(k==1){
+        node*temp =head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+    int cnt = 0;
+    node*temp = head;
+    node* prev = NULL;
+    while(temp != NULL){
+        cnt++;
+       
+        if(cnt == k){
+            prev->next = prev->next->next;
+            delete temp;
+            break;
+        }
+        prev = temp;
+       temp = temp->next;
+    }
+    return head;
+}
+node*deleteEL(node*head , int el){
+    if(head == NULL) return head;
+    if(head->data == el){
+        node*temp =head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+    node*temp = head;
+    node* prev = NULL;
+    while(temp != NULL){
+      
+       
+        if(temp->data == el){
+            prev->next = prev->next->next;
+            delete temp;
+            break;
+        }
+        prev = temp;
+       temp = temp->next;
+    }
+    return head;
+}
+node * insertHead(node * head , int val){
+    return new node(val,head);
+}
+node* insertTail(node*head,int val){
+    if(head == NULL) return new node(val , head);
+    node*temp = head;
+     while (temp->next != NULL )
+     {
+        temp = temp->next;
+     }
+     node*newnode = new node(val);
+      temp->next = newnode;
+    return head;
+}
 int main(){
     vector<int> arr = {2,5,8,7};
     node * head = COnvertArr2LL(arr);
-    head = deleteHead(head);
-    print(head);
+
     // cout<<head->data;
    /*  traversal code
    node * temp = head;
@@ -72,4 +145,13 @@ int main(){
     */
     // cout<<lengthOfLL(head);
     // cout<< checkifpresent(head,5);
+    // head = deleteHead(head);
+    // print(head);
+    // head = deletetail(head);
+    // head = deletek(head,3);
+    // head = deleteEL(head,8);
+    // head = insertHead( head, 100);
+     head = insertTail( head, 100);
+    print(head);
+
 }
