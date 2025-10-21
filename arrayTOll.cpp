@@ -130,6 +130,48 @@ node* insertTail(node*head,int val){
       temp->next = newnode;
     return head;
 }
+node * insertAtK(node*head , int val,int k){
+    if(head == NULL){
+        if(k==1)return new node(val);
+        else return NULL;
+    }
+    if(k == 1){//insertion at head
+        node * temp = new node(val,head);
+        return temp;
+    }
+    node * temp = head;
+    int cnt = 0 ;
+    while(temp != NULL){
+        cnt++;
+        if(cnt == k-1){
+            node * n = new node(val);
+            n->next = temp->next;
+            temp->next = n;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
+node * insertBEFOREvalue(node*head , int el,int val){
+    if(head == NULL){
+         return NULL;
+    }
+    if(head->data == val){
+        return new node (el, head);
+    }
+    node * temp = head;
+    while(temp->next != NULL){
+        
+        if(temp->next->data == val){
+            node * n = new node(el,temp->next);
+            temp->next = n;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
 int main(){
     vector<int> arr = {2,5,8,7};
     node * head = COnvertArr2LL(arr);
@@ -151,7 +193,9 @@ int main(){
     // head = deletek(head,3);
     // head = deleteEL(head,8);
     // head = insertHead( head, 100);
-     head = insertTail( head, 100);
+    //  head = insertTail( head, 100);
+    // head = insertAtK(head, 10 , 3);
+    head = insertBEFOREvalue(head, 10 , 7);
     print(head);
 
 }
