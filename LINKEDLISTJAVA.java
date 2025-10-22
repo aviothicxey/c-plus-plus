@@ -1,13 +1,13 @@
-class node{
+class Node{
     int data;
-    node next;
-    node back;
-    node(int data1 , node next1 , node back1){
+    Node next;
+    Node back;
+    Node(int data1 , node next1 , node back1){
         this.data = data1;
         this.next = next1;
         this.back = back1;
     }
-    node(int data1){
+    Node(int data1){
         this.data = data1;
         this.next = null;
         this.back = null;
@@ -20,9 +20,19 @@ public class LINKEDLISTJAVA{
         }
         system.out.println();
     }
+    private static Node convert2Arr(int[]arr){
+        Node head = new Node (arr[0]);
+        Node prev = head;
+        for(int i = 1; i < arr.length;i++){
+            Node temp = new Node(arr[i],null , prev);
+            prev.next = temp;
+            prev = temp;
+        }
+        return head;
+    }
     public static void main(String[] args){
         int[] arr = {12 , 5 , 6 ,8};
-        node head = convert2Arr(arr);
+        Node head = convert2Arr(arr);
         print(head);
     }
 }
