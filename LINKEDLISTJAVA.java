@@ -2,7 +2,7 @@ class Node{
     int data;
     Node next;
     Node back;
-    Node(int data1 , node next1 , node back1){
+    Node(int data1 , Node next1 , Node back1){
         this.data = data1;
         this.next = next1;
         this.back = back1;
@@ -13,12 +13,12 @@ class Node{
         this.back = null;
     }};
 public class LINKEDLISTJAVA{
-    private static void print(node head){
+    private static void print(Node head){
         while(head != null){
-            system.out.print(head.data+ " ");
+            System.out.print(head.data+ " ");
             head = head.next;
         }
-        system.out.println();
+        System.out.println();
     }
     private static Node convert2Arr(int[]arr){
         Node head = new Node (arr[0]);
