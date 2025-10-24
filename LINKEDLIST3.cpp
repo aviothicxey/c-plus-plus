@@ -40,10 +40,23 @@ return head;
     }
     cout<<endl;
  }
+node*deleteHead(node*head){
+    if(head == NULL || head->next == NULL){
+        return NULL;
+    }
+    node*prev = head;
+    head = head->next;
 
+    head->back = nullptr;
+    prev->next = nullptr; 
+
+    delete prev;
+    return head;
+}
 int main(){
     vector<int> arr = {1,3,2,4};
     node*head  = convert2Array(arr);
+    head = deleteHead(head);
     print(head);
     return 0;
 }
