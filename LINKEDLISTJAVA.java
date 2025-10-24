@@ -30,9 +30,23 @@ public class LINKEDLISTJAVA{
         }
         return head;
     }
+    private static Node deleteHead(Node head){
+    if(head == null || head.next == null){
+        return null;
+    }
+    Node prev = head;
+    head = head.next;
+
+    head.back = null;
+    prev.next = null; 
+
+    
+    return head;
+}
     public static void main(String[] args){
         int[] arr = {12 , 5 , 6 ,8};
         Node head = convert2Arr(arr);
+        head = deleteHead(head);
         print(head);
     }
 }
