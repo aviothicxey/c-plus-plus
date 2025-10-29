@@ -126,13 +126,28 @@ if(head == NULL) return head;
 
     return head;
 }
+void deleteEL(node*temp){
+ node*prev = temp->back;
+ node*front = temp->next;
+ if(front == NULL){
+    prev->next = nullptr;
+    temp->back = nullptr;
+    delete temp;
+    return;
+ }
+ prev -> next = front;
+ front->back = prev;
+ temp-> next = temp->back = nullptr;
+ delete temp;
 
+}
 int main(){
     vector<int> arr = {1,3,2,4};
     node*head  = convert2Array(arr);
     // head = deleteHead(head);
     // head = deleteTail(head);
-    head = deletek(head , 2);
+    // head = deletek(head , 2);
+   deleteEL(head->next);
     print(head);
     return 0;
 }
