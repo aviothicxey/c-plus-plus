@@ -43,10 +43,66 @@ public class LINKEDLISTJAVA{
     
     return head;
 }
+private static Node deleteTail(Node  head){
+    if(head == null || head.next == null){
+        return null;
+    }
+    Node tail = head;
+    while (tail.next!= null)
+    {
+        tail= tail.next;
+    }
+    Node prev = tail.back;
+    prev.next = null;
+    tail.back = null;
+   
+    return head;
+
+}
+private static Node insertHead(Node head, int val){
+    // return new Node (val,head); // for singly;
+    if(head == null ) return new Node (val);
+    Node newNode = new Node(val , head , null);
+    head.back = newNode;
+    return newNode;
+}
+private static Node insertTail(Node head , int val){
+    if(head == null ) return new Node (val);
+    Node tail = head;
+    while(tail.next != null){
+        tail = tail.next;
+    }
+    Node newNode = new Node (val , null , tail);
+    tail.next = newNode;
+    return head;
+}
+private static Node reverse(Node head){
+    if (head == null || head.next == null) {
+            return head;
+        }
+    Node temp = head ;
+    Node prev = null;
+    while(temp != null){
+        prev = temp.back;
+        temp.back = temp.next;
+        temp.next = prev;
+        temp = temp.back;
+    }
+    if(prev != null){
+        head = prev.back;
+    }
+    return head;
+
+
+}
     public static void main(String[] args){
         int[] arr = {12 , 5 , 6 ,8};
         Node head = convert2Arr(arr);
-        head = deleteHead(head);
+        // head = deleteHead(head);
+        // head = deleteTail(head);
+        // head = insertHead(head,10);
+        // head = insertTail(head , 20);
+        head = reverse(head);
         print(head);
     }
 }

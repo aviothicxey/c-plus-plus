@@ -71,6 +71,9 @@ node*deleteHead(node*head){
 //         return head;
 // }
 node* deleteTail(node*head){
+    if(head == NULL || head->next == NULL){
+        return NULL;
+    }
     node* tail = head;
     while (tail->next!= nullptr)
     {
@@ -84,12 +87,52 @@ node* deleteTail(node*head){
 
 }
 
+node * deletek(node * head , int val){
+if(head == NULL) return head;
+
+    node * temp = head;
+    int cnt = 0;
+
+// first move in the linkedlist 
+
+    while(temp != NULL ){
+        cnt++;
+        if(cnt == val) break;
+        temp = temp->next;
+    }
+
+    node* prev = temp->back; 
+    node* front = temp->next;
+
+    if(prev == NULL && front == NULL){ //single element linkedlist
+        delete temp;
+        return NULL;
+    }
+
+    else if (prev == NULL){ //delete head case
+       return deleteHead(head);
+    }
+
+    else if(front == NULL){ //delete tail case
+       return deleteTail(head);
+    }
+
+        front->back = temp->back; // or front->back = prev
+        prev->next = temp->next; // prev->.next = front
+
+        temp->back = nullptr;
+        temp->next = nullptr;
+        delete temp;
+
+    return head;
+}
 
 int main(){
     vector<int> arr = {1,3,2,4};
     node*head  = convert2Array(arr);
     // head = deleteHead(head);
-    head = deleteTail(head);
+    // head = deleteTail(head);
+    head = deletek(head , 2);
     print(head);
     return 0;
 }
