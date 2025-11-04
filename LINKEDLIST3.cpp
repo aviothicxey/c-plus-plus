@@ -141,6 +141,16 @@ void deleteEL(node*temp){
  delete temp;
 
 }
+
+//insertion before node:
+
+
+
+
+//insertion after node:
+
+
+
 int main(){
     vector<int> arr = {1,3,2,4};
     node*head  = convert2Array(arr);
