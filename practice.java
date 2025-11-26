@@ -227,3 +227,30 @@ class maxfrequency{
         System.out.println(mfreq(arr,n));
     }
 }
+
+//merge two arrays:
+class merged{
+    static int[] merge(int[]a, int[]b){
+        int n = a.length;
+        int m= b.length;
+        int[] merged = new int[n+m];
+        for(int i = 0 ; i < n ; i++){
+            merged[i] = a[i];
+        }
+        for(int i = 0 ; i < m ; i++){
+            merged[i+n] = b[i];
+        }
+        return merged;
+    }
+    public static void main(String[] args){
+        int[] a = {1,2,3,4};
+        int[] b = {5,6,7,8};
+
+        int[] result = merged(a,b);
+        for(int x : result){
+            System.out.print(x+" ");
+        }
+    }
+}
+
+//ist occurence of an integer in a sorted list with duplicates:
