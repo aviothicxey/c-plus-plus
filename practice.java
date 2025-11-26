@@ -115,3 +115,37 @@ class gcd{
         System.out.println(gcd(a,b));
     }
 }
+
+
+//Arrays:
+
+//cut the sticks:
+
+import java.util.*;
+
+public class Solution {
+    public static List<Integer> cutTheSticks(int[] arr) {
+        List<Integer> result = new ArrayList<>();
+        Arrays.sort(arr);
+
+        int n = arr.length;
+
+        for (int i = 0; i < n; ) {
+            result.add(n - i);      // number of sticks left
+            int min = arr[i];       // smallest non-zero stick
+
+            // move i forward until arr[i] is bigger than min
+            while (i < n && arr[i] == min) {
+                i++;
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 4, 4, 2, 2, 8};
+        List<Integer> ans = cutTheSticks(arr);
+        for (int x : ans) System.out.println(x);
+    }
+}
