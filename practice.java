@@ -87,7 +87,7 @@ class pf{
     static void pf(int n , int i ){
         if(n == 1) return;
         if(n % i==0){
-        System.out.println(i +" ");
+        System.out.print(i +" ");
         pf(n/i,i);
         }
         else{
