@@ -58,3 +58,45 @@ class newn{
         System.out.println("New Number = " + newn(n, 0));
     }
 }
+
+
+//binary conversion:
+//RETURN STRING:
+class binary{
+    static String binaryC(int n) {
+        if(n==0)return "0";
+        if(n==1)return "1";
+        return binaryC(n/2) + n%2;
+    }
+    public static void main(String[] args){
+        int n = 10;
+        System.out.println(binaryC(n));
+    }
+}
+
+//RETURN INT
+static int toBinary(int n) {
+    if (n == 0) return 0;
+    return (n % 2) + 10 * toBinary(n / 2);
+}
+
+
+// prime factors:
+
+class pf{
+    static void pf(int n , int i ){
+        if(n == 1) return;
+        if(n % i==0){
+        System.out.println(i +" ");
+        pf(n/i,i);
+        }
+        else{
+            pf(n , i+1);
+        }
+    }
+    public static void main(String[] args) {
+        int n = 36;
+        System.out.print("Prime Factors: ");
+        pf(n,2);
+    }
+}
