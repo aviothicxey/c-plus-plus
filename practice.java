@@ -100,3 +100,18 @@ class pf{
         pf(n,2);
     }
 }
+
+// greatest common divisor using recursion:
+
+class gcd{
+    static int gcd(int a , int b){
+        if(b == 0){
+            return a; //base case : jab remainder(b) zero hoga tbhi divisor greatest hoga.
+        }
+        return gcd(b, a%b);
+    }
+    public static void main(String[] args){
+        int a = 48; int b = 18;
+        System.out.println(gcd(a,b));
+    }
+}
