@@ -203,3 +203,27 @@ public class KthLargest{
 
 //max freq in a sequence:
 
+class maxfrequency{
+    static int mfreq(int[] arr , int n){
+
+        int maxfreq = 0;
+        int maxelenement = 0;
+        for(int i = 0 ; i < n ; i++){
+            int cnt = 0;
+            for(int j = 0 ; j < n ; j++){ 
+            if(arr[i]==arr[j]) cnt++;
+            }
+            if(cnt > maxfreq){
+                maxfreq = cnt;
+                maxelenement = arr[i];
+            }
+        }
+        
+            return maxelenement;
+    }
+    public static void main(String[] args){
+        int[] arr = {2,4,3,5,6,4,4,2,3,4,5,6,4,3,2,1,2,3,4,5,6};
+        int n = arr.length;
+        System.out.println(mfreq(arr,n));
+    }
+}
