@@ -149,3 +149,57 @@ public class Solution {
         for (int x : ans) System.out.println(x);
     }
 }
+
+
+//kth largest number in an array:
+
+//using build in function:
+import java.util.*;
+
+public class KthLargest {
+    public static int findKthLargest(int[] arr, int k) {
+        Arrays.sort(arr); // sort ascending
+        return arr[arr.length - k]; // kth largest
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 1, 5, 12, 2, 11};
+        int k = 3;
+
+        System.out.println("Kth largest = " + findKthLargest(arr, k));
+    }
+}
+
+
+//without build in functions:
+public class KthLargest{
+    static void manaulSort(int[] arr){
+        int n = arr.length;
+
+        for(int i = 0 ; i<n-1 ; i++){
+            int minInex = i;
+            for(int j = i+1; j<n ; j++){
+                if(arr[j]<arr[minInex]){
+                    minInex = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[minInex];
+            arr[minInex] = temp;
+        }
+    }
+    static int KthLargest(int[]arr,int k){
+        manaulSort(arr);
+        return arr[arr.length -k];
+    }
+    public static void main(String[] args) {
+        int[] arr = {3, 1, 5, 12, 2, 11};
+        int k = 3;
+
+        System.out.println(KthLargest(arr,k));
+    }
+}
+
+
+//max freq in a sequence:
+
