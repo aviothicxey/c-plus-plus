@@ -67,3 +67,17 @@ public class stack {
     }
 }
  
+
+
+
+ public static void main(String[] args) {
+    int[]arr={5,3,8,6,7};
+    Stack<Integer>st=new Stack<>();
+    for(int x:arr){
+        while(!st.isEmpty() && st.peek()>x){
+            st.pop();
+        }
+        st.push(x);
+    }
+    System.out.println(st);
+}

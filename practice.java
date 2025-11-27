@@ -253,4 +253,5 @@ class merged{
     }
 }
 
-//ist occurence of an integer in a sorted list with duplicates:
+//ist and last occurence of an integer in a sorted list with duplicates:
+
