@@ -300,3 +300,41 @@ class Solution {
 
 //find count of a number in a sorted list with duplicates:
 
+count = lastIndex - firstIndex;
+
+
+
+// rotation count of a sorted array:
+
+
+
+
+//search element in a rotated array:
+
+public class SearchElement{
+    public static int SearchElement(int[] arr,int target){
+        int n  = arr.length;
+        int start = 0;
+        int end = n-1;
+        while(start <= end){
+            int mid = start + (end - start)/2;
+            if(arr[mid] == target){
+                return mid;
+            }
+            if(arr[mid]>=arr[start]){
+                if(arr[mid]>target && arr[start] <=target){
+                    end = mid -1;
+                }
+                else {
+                    start = mid +1;
+                }
+            }else{
+                if(arr[mid]<target && arr[end]>= target){
+                    start = mid + 1;
+                }
+                else end = mid -1;
+            }
+        }
+        return -1;
+    }
+}
