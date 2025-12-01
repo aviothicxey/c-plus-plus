@@ -363,3 +363,37 @@ public class BubbleSort{
 }
 
 //find number of swaps in selection sort:
+
+public class SelectionSort{
+    public static int Swaps(int[]nums){
+        int n = nums.length;
+        int swaps = 0;
+        for(int i = 0 ; i < n -1 ; i++){
+            int minIndex = i;
+            for(int j = 0 ; j < n ; j++){
+                if(arr[j]>arr[minIndex]){
+                    minIndex = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+            swaps++;
+        }
+        return swaps;
+    }
+}
+
+public class InsertionSort{
+    public static int countSwaps(int[] arr){
+        int swaps = 0 ;
+        int n = arr.length;
+        for(int i = 1; i < n ;i++){
+            int key = arr[i];
+            int j = i -1;
+            while( j >=0 && arr[i] > key){
+                
+            }
+        }
+    }
+}
