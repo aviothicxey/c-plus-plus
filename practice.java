@@ -338,3 +338,28 @@ public class SearchElement{
         return -1;
     }
 }
+
+
+//Sorting:
+
+//find the number of swaps in bubble sort:
+
+public class BubbleSort{
+    public static int Swaps(int[]nums){
+        int n = nums.length;
+        int swaps = 0;
+        for (int i = 0 ; i < n-1; i++){
+            for(int j = 0 ; j < n-i-1 ; j++){
+                if(arr[j] > arr[j+1]){
+                int temp  = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                swaps++;
+                }
+            }
+        }
+        return swaps;
+    }
+}
+
+//find number of swaps in selection sort:
