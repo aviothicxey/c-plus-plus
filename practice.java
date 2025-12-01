@@ -476,5 +476,31 @@ public class MatrixMultiplication {
 
 //row or column sum:
 public class MatrixSum{
-    public start int[][]SUM(int[][])
+    public static int[] RowSum(int[][]matrix){
+        int r = matrix.length;
+        int c = matrix[0].length;
+        int[] result = new int[r];
+        for(int i = 0 ; i < r ; i++){
+            for(int j = 0 ; j < c ; j++){
+                sum += matrix[i][j];
+            }
+            result[i] = sum;
+        }
+        return result;
+    }
+
+    public static int[] ColSum(int[][]matrix){
+        int r = matrix.length;
+        int c = matrix[0].length;
+        int[]result = new int[c];
+
+        for(int i = 0 ; i < c;i++){
+            int sum = 0;
+            for(int j = 0 ; j < r ; j++){
+                sum += matrix[j][i];
+            }
+            result[i] = sum;
+        }
+        return result;
+    }
 }
