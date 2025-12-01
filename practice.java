@@ -510,9 +510,9 @@ public class MatrixSum{
 
 public class Spiralmatrix{
     public List<Integer> spiralOrder(int[][]matrix){
-        int bottom = 0 ;
+        int bottom = matrix.length -1;
         int top  = 0 ;
-        int left = matrix.length -1;
+        int left = 0;
         int right = matrix[0].length -1;
         List<Integer> result = new ArrayList<>();
         while(left <= right && top <= bottom){
@@ -529,7 +529,7 @@ public class Spiralmatrix{
             }
             if(top <= bottom){
                 for(int i = bottom ; i >= top ; i--){
-                    result.add(matrix[i][left]);y
+                    result.add(matrix[i][left]);
                 }left++;
             }
         }
