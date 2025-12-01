@@ -533,5 +533,6 @@ public class Spiralmatrix{
                 }left++;
             }
         }
+        return result;
     }
 }
