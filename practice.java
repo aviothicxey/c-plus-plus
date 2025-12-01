@@ -536,3 +536,22 @@ public class Spiralmatrix{
         return result;
     }
 }
+
+//rotate a matrix by 90 degrees :
+//leetcode 48: rotate image .
+
+public class Solution{
+    public void rotate(int[][]matrix){
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int[][]result = new int[cols][rows];
+
+        for(int i = 0 ; i < rows ; i++){
+            for(int j = 0 ; j < cols ;j++ ){
+
+            }
+        }
+    }
+}
+
+
