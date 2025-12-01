@@ -406,20 +406,72 @@ public class InsertionSort{
 // 2d array:
 
 // matrix multication: 
-public class matrixMultiplication{
-    public static int[][] multiply(int[][]A , int[][]B){
-        int m = A.length; // rows of a;
-        int n = A[0].length; //columns of A  
-        int p = B[0].length; //columns of b
 
+
+
+public class MatrixMultiplication {
+    // Function to multiply two matrices
+    public static int[][] multiply(int[][] A, int[][] B) {
+        int m = A.length;         // rows of A
+        int n = A[0].length;      // columns of A
+        int p = B[0].length;      // columns of B
         int[][] result = new int[m][p];
-        for(int i = 0 ; i < m ; i++){
-            for(int j = 0 ; j < p ; j++){
-                for(int k = 0 ; k < n ;k++){
+        // Matrix Multiplication Logic
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < p; j++) {
+                for (int k = 0; k < n; k++) {
                     result[i][j] += A[i][k] * B[k][j];
                 }
             }
-        }  
+        }
         return result;
     }
+    // Function to print matrix
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int val : row) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // Input matrix sizes
+        System.out.print("Enter rows & cols of Matrix A: ");
+        int r1 = sc.nextInt();
+        int c1 = sc.nextInt();
+        System.out.print("Enter rows & cols of Matrix B: ");
+        int r2 = sc.nextInt();
+        int c2 = sc.nextInt();
+        // Check valid multiplication condition
+        if (c1 != r2) {
+            System.out.println("Matrix multiplication not possible!");
+            return;
+        }
+        int[][] A = new int[r1][c1];
+        int[][] B = new int[r2][c2];
+        // Input A
+        System.out.println("Enter Matrix A:");
+        for (int i = 0; i < r1; i++) {
+            for (int j = 0; j < c1; j++) {
+                A[i][j] = sc.nextInt();
+            }
+        }
+        // Input B
+        System.out.println("Enter Matrix B:");
+        for (int i = 0; i < r2; i++) {
+            for (int j = 0; j < c2; j++) {
+                B[i][j] = sc.nextInt();
+            }
+        }
+        // Multiply
+        int[][] result = multiply(A, B);
+        // Output
+        System.out.println("Resultant Matrix:");
+        printMatrix(result);
+        sc.close();
+    }
 }
+
+//
