@@ -481,6 +481,7 @@ public class MatrixSum{
         int c = matrix[0].length;
         int[] result = new int[r];
         for(int i = 0 ; i < r ; i++){
+            int sum = 0;
             for(int j = 0 ; j < c ; j++){
                 sum += matrix[i][j];
             }
