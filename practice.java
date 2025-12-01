@@ -474,4 +474,7 @@ public class MatrixMultiplication {
     }
 }
 
-//
+//row or column sum:
+public class MatrixSum{
+    public start int[][]SUM(int[][])
+}
