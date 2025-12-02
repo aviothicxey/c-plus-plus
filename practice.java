@@ -571,3 +571,21 @@ public class Solution{
 
 
 // reverse the order of words in a string:
+public class reverseWords{
+    public static String reverseWords(String s){
+        String words[] = s.trim.split("\\s");
+        int start = 0;
+        int end = words.length -1;
+        while(start < end){
+            String temp = words[start];
+            words[start] = words[end];
+            words[end] = temp;
+            start++;
+            end--;
+        }
+        return String.join(" ",words);
+    }
+    public static void main(String[] args) {
+        String s = "hello my love";
+        System.out.println(reverseWords(s));
+}
