@@ -662,7 +662,10 @@ public class Solution{
     }
 }
 
+
 // spell the number :
+
+
 import java.util.*;
 public class numberToWords{
     private static final String[] units= {"","One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
@@ -672,7 +675,7 @@ public class numberToWords{
     public static String convertBelowThousand(int num){
         String result = "";
         if(num>= 100){
-            result += units[num/100] + "Hundred";
+            result += units[num/100] + " Hundred ";
             num = num % 100;
         }
         if(num>=10 && num<=19){
