@@ -573,7 +573,7 @@ public class Solution{
 // reverse the order of words in a string:
 public class reverseWords{
     public static String reverseWords(String s){
-        String words[] = s.trim.split("\\s");
+        String words[] = s.trim.split("\\s+");
         int start = 0;
         int end = words.length -1;
         while(start < end){
@@ -588,4 +588,23 @@ public class reverseWords{
     public static void main(String[] args) {
         String s = "hello my love";
         System.out.println(reverseWords(s));
+}
+}
+
+//using stack:
+public class reverseWords{
+    public static String reverseWords(String s){
+        Stack<String> st = new Stack<>();
+        String[] words = s.trim().split("\\s+");
+        for(String w : words){
+            st.push(w);
+        }
+        StringBuilder sb = new StringBuilder();
+        while(!st.isEmpty()){
+            sb.append(st.pop());
+            if(!st.isEmpty()) sb.append(" ");
+        }
+        return sb.toString();
+        
+    }
 }
