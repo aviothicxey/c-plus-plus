@@ -623,7 +623,7 @@ public class Subsequence{
     }
 }
 
-// count words:
+// COUNT WORDS:
 
 public class WordCount{
     public static int countWords(String s){
@@ -641,3 +641,25 @@ class Solution {
         return words.length;
     }
 }
+
+//without split:
+public class Solution{
+    public int CountWords(String s){
+        int count = 0 ;
+        boolean inWord = false;
+        for(int i = 0 ; i = s.length();i++){
+            if(s.charAt(i) != ' '){
+                if(!inWord) {
+                    coumt++;
+                    inWord = true;
+                }
+            }
+            else{
+                inWord = false;
+            }
+        }
+        return count;
+    }
+}
+
+
