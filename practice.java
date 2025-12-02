@@ -662,4 +662,52 @@ public class Solution{
     }
 }
 
+// spell the number :
 
+public class numberToWords{
+    private static final String[] units= {"","One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+    private static final String[] teens= {"Ten","Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    private static final String[] tens= {"","", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+
+    public static String convertBelowThousand(int num){
+        String result = "";
+        if(num>= 100){
+            result += units[num/100]+"Hundred";
+            num = num % 100;
+        }
+        if(num>=10 && num<=19){
+            result += teens[num - 10]+" ";
+        }else if(num>= 20){
+            result += tens[num/10]+" ";
+            if(num %10 != 0){
+                result+= units[num%10] + " ";
+            }
+        }else if(num>0){
+            result += units[num]+ " ";
+        }
+        return result;
+    }
+    public static String numberToWords(int num){
+        if(num == 0) return "Zero";
+        String result = "";
+        if(num >= 100000){
+            result+= convertBelowThousand(num/100000)+"Lakh";
+            num % 100000;
+        }
+        if(num>=1000){
+            result += convertBelowThousand(num/1000) + "thousand";
+            num = num % 1000;
+        }
+        if(num> 0){
+            result+= convertBelowThousand(num);
+        }
+        return result.trim();
+    }
+     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
+
+        System.out.println("Number in words: " + numberToWords(number));
+    }
+}
