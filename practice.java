@@ -605,6 +605,20 @@ public class reverseWords{
             if(!st.isEmpty()) sb.append(" ");
         }
         return sb.toString();
-        
+
+    }
+}
+
+// String is subsequence or not
+
+public class Subsequence{
+    public static boolean subSequence(String s , String t){ // here s is subsequence and t is main string
+        int i = 0 ; int j = 0; // i move in string s and j move in string t
+        while(i < s.length && j < t.length()){
+            if(s.charAt(i) = t.charAt(j)){
+                i++; // move in s
+            }j++; // always move t
+        }
+        return i == s.length();
     }
 }
