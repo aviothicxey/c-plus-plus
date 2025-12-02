@@ -663,16 +663,16 @@ public class Solution{
 }
 
 // spell the number :
-
+import java.util.*;
 public class numberToWords{
     private static final String[] units= {"","One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
     private static final String[] teens= {"Ten","Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
-    private static final String[] tens= {"","", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+    private static final String[] tens= {"","", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 
     public static String convertBelowThousand(int num){
         String result = "";
         if(num>= 100){
-            result += units[num/100]+"Hundred";
+            result += units[num/100] + "Hundred";
             num = num % 100;
         }
         if(num>=10 && num<=19){
@@ -691,11 +691,11 @@ public class numberToWords{
         if(num == 0) return "Zero";
         String result = "";
         if(num >= 100000){
-            result+= convertBelowThousand(num/100000)+"Lakh";
-            num % 100000;
+            result+= convertBelowThousand(num/100000)+"Lakh ";
+            num = num % 100000;
         }
         if(num>=1000){
-            result += convertBelowThousand(num/1000) + "thousand";
+            result += convertBelowThousand(num/1000) + "Thousand ";
             num = num % 1000;
         }
         if(num> 0){
