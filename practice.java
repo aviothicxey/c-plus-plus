@@ -554,7 +554,7 @@ public class Solution{
         for(int i = 0 ; i < rows; i++){
             int left = 0 ; int right = rows-1;
             while(left < right){
-                int temp = result[i][left];
+                int temp = result[i][ left];
                 result[i][left] = result[i][right];
                 result[i][right] = temp;
                 left++;
@@ -570,3 +570,4 @@ public class Solution{
 }
 
 
+// reverse the order of words in a string:
