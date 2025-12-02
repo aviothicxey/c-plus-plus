@@ -714,3 +714,16 @@ public class numberToWords{
         System.out.println("Number in words: " + numberToWords(number));
     }
 }
+
+
+//check if strings are rotation or not :
+
+class Result{
+    static int isRotation(String s1,String s2){
+        if(s1.length() != s2.length()) return 0;
+        s1 = s1 + s1;
+        if(s1.contains(s2)) return 1;
+        return 0;
+    }
+    
+}
