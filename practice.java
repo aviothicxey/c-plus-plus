@@ -644,13 +644,13 @@ class Solution {
 
 //without split:
 public class Solution{
-    public int CountWords(String s){
+    public int countWords(String s){
         int count = 0 ;
         boolean inWord = false;
-        for(int i = 0 ; i = s.length();i++){
+        for(int i = 0 ; i < s.length();i++){
             if(s.charAt(i) != ' '){
                 if(!inWord) {
-                    coumt++;
+                    count++;
                     inWord = true;
                 }
             }
