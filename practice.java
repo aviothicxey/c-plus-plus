@@ -548,7 +548,22 @@ public class Solution{
 
         for(int i = 0 ; i < rows ; i++){
             for(int j = 0 ; j < cols ;j++ ){
-
+                result[j][i] = matrix[i][j];
+            }
+        }
+        for(int i = 0 ; i < rows; i++){
+            int left = 0 ; int right = rows-1;
+            while(left < right){
+                int temp = result[i][left];
+                result[i][left] = result[i][right];
+                result[i][right] = temp;
+                left++;
+                right--;
+            }
+        }
+        for(int i = 0 ; i < rows ; i++){
+            for(int  j = 0 ; j < cols ; j++){
+                matrix[i][j] = result[i][j];
             }
         }
     }
