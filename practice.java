@@ -573,7 +573,7 @@ public class Solution{
 // reverse the order of words in a string:
 public class reverseWords{
     public static String reverseWords(String s){
-        String words[] = s.trim.split("\\s+");
+        String words[] = s.trim().split("\\s+");
         int start = 0;
         int end = words.length -1;
         while(start < end){
@@ -620,5 +620,24 @@ public class Subsequence{
             }j++; // always move t
         }
         return i == s.length();
+    }
+}
+
+// count words:
+
+public class WordCount{
+    public static int countWords(String s){
+        String[] words = s.trim().split("\\s+");
+        return words.length;
+    }
+}// this will not work for "" this case .
+//use this instead: 
+
+class Solution {
+    public int countSegments(String s) {
+        s = s.trim();
+        if(s.isEmpty()) return 0;
+        String[] words = s.split("\\s+");
+        return words.length;
     }
 }
