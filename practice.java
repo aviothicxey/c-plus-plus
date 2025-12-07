@@ -744,3 +744,18 @@ if(head == null)return ;
     backwardPrint(head.next);
     System.out.print(head.data + "-");
 }
+
+//copy ist list in 2nd list:
+static node copyList(Node head){
+    if(head == null) return null;
+    node newhead = new node(head.data);
+    node temp1 = head.next;
+    node temp2 = newhead;
+    while(temp1 != null){
+        node temp = new node(temp1.data);
+        temp2.next = temp;
+        temp2 = temp2.next;
+        temp1 = temp1.next;
+    }
+    return newhead;
+}
