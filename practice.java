@@ -759,3 +759,33 @@ static node copyList(Node head){
     }
     return newhead;
 }
+
+//check if list is palindrome:
+
+class Result{
+    static int checkPalindrome(Node Head){
+        if(head == null || head.next == null)return 1;
+        Node slow = Head;
+        Node fast = Head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node prev = null;
+        Node curr = slow;
+        while(curr != null){
+            Node next = curr.next;
+            curr.next = prev ;
+            prev = curr;
+            curr = nexxt;
+        }
+        Node p1 = head;
+        Node p2 = prev;
+        while(p2 != null){
+            if(p1.data != p2.data) return 0;
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return 1;
+    }
+}
