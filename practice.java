@@ -789,3 +789,29 @@ class Result{
         return 1;
     }
 }
+
+//move the smallest to head and largest to tail:
+static Node shiftSmallLarge(Node Head){
+    if(head == null && head.next == null){
+        return head;
+    }
+    Node min = Head;
+    Node max = head;
+    Node prevMin = null;
+    Node prevMax = null;
+    Node curr = head ;
+    Node prev = null;
+    while(curr != null){
+        if(curr.data < min.data){
+            min = curr;
+            prevMin = prev;
+        }
+        if(curr.data > max.data){
+            max = curr;
+            prevMax = prev;
+        }
+        prev = curr;
+        curr = curr.next;
+    }
+    
+}
