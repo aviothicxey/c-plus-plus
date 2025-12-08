@@ -1,21 +1,21 @@
-//swap the sub array in a array till k where k is 3
-// import java.util.Arrays;
-// public class SlidingWindow{
-//     public static void swapSubArray(int[] arr , int k){
-//         int n = arr.length;
-//         for(int i = 0 ; i < n ; i+=k){
-//             int left = i ;
-//             int right = Math.min(i+k-1, n-1);
-//             while(left < right && right < n){
-//                 int temp = arr[left];
-//                 arr[left] = arr[right];
-//                 arr[right] = temp;
-//                 left++;
-//                 right--;
-//             }
-//         }
-//     }
-// }
+swap the sub array in a array till k where k is 3
+import java.util.Arrays;
+public class SlidingWindow{
+    public static void swapSubArray(int[] arr , int k){
+        int n = arr.length;
+        for(int i = 0 ; i < n ; i+=k){
+            int left = i ;
+            int right = Math.min(i+k-1, n-1);
+            while(left < right && right < n){
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+    }
+}
 
 /*
 Q1. Energy Required for Insertion Sort
@@ -113,3 +113,40 @@ Seema
 // This signifies the position of special employee (consider e-based indexing)
 Sample Output
 Aman */
+
+
+import java.util.*;
+class Node{
+    String name;
+    Node next;
+    Node(String name){
+        this.name = name ;
+        this.next = null;
+    }
+}
+public class Solution{
+    public static Node SpecialEmployee(Node head){
+        if(head == null || head.next == null) return null;
+
+        Node slow = head;
+        Node fast = head;
+// detect the cycle:
+        while(fast!= null && fast.next != null){
+            slow = slow.next ;
+            fast = fast.next.next;
+            if(slow == fast) break;
+        }
+
+//no cycle:
+        if(fast == null || fast.next == null){
+            return null;
+        }
+//find the start of the cycle:
+        slow = head;
+        while(slow != fast){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow; // special employee
+    }
+}
