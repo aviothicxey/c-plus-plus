@@ -158,6 +158,32 @@ public class Solution{
             sc.nextLine();
             Node head = null , tail = head;
             ArrayList<Node> list = new ArrayList<>();
+            //read employee names and create linked list:
+            for(int i = 0; i < N ; i++){
+                String name = sc.nextLine();
+                Node newNode = new Node(name);
+                list.add(newNode);
+                if(head == null){
+                    head = newNode;
+                    tail = newNode;
+                }else{
+                    tail.next = newNode;
+                    tail = newNode;
+                }
+            }
+            int pos = sc.nextInt(); //special employee position
+            //If pos != -1 create a cycle
+            if(pos != -1){
+                tail.next = list.get(pos);
+            }
+            Node special = specialEmployee(head);
+            if(special == null)
+                System.out.println(-1);
+            else
+                System.out.println(special.name);
         }
+
+        sc.close();
+        
     }
 }
