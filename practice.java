@@ -791,7 +791,7 @@ class Result{
 }
 
 //move the smallest to head and largest to tail:
-static Node shiftSmallLarge(Node Head){
+static Node shiftSmallLarge(Node head){
     if(head == null && head.next == null){
         return head;
     }
@@ -813,5 +813,18 @@ static Node shiftSmallLarge(Node Head){
         prev = curr;
         curr = curr.next;
     }
+
+    if(min == max) return head;
+
+    boolean minBeforeMax;
+    curr = head;
+    while(curr != null && curr != min && curr != max){
+        curr = curr.next;
+    }
+    if(curr == min){
+        minBeforeMax = true;
+    }
+    else minBeforeMax = false;
+
     
 }
