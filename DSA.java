@@ -149,4 +149,15 @@ public class Solution{
         }
         return slow; // special employee
     }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt(); // number of testcases
+        while(T-- > 0){
+            int N = sc.nextInt();
+            sc.nextLine();
+            Node head = null , tail = head;
+            ArrayList<Node> list = new ArrayList<>();
+        }
+    }
 }
