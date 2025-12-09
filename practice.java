@@ -791,15 +791,24 @@ class Result{
 }
 
 //move the smallest to head and largest to tail:
+class Node {
+    int data;
+    Node next;
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
 static Node shiftSmallLarge(Node head){
     if(head == null || head.next == null){
-        return;
+        return head;
     }
-    Node* prevMin = null;
-    Node * prevMax = null;
-    Node * minNode = head;
-    Node * maxNode = head;
-    Node * curr = head;
+    //Find minimum node and its previous node
+    Node prevMin = null;
+    Node  prevMax = null;
+    Node  minNode = head;
+    Node  maxNode = head;
+    Node  curr = head;
     while(curr != null){
         if(curr.data < minNode.data){
             minNode = curr;
@@ -812,39 +821,47 @@ static Node shiftSmallLarge(Node head){
         curr = curr.next;
 
     }
+    //Move minNode to head (if not already head)
     if(minNode != head){
+        // Remove minNode from its current position
         if(prevMin != null){
-            prevMin.next = minNode.next;
+            prevMin.next = minNode.next;}
+            //insert at head
             minNode.next = head;
             head = minNode;
-        }
+        
     }
-    if(maxNode == minNode) return ;
-    if(maxNode == head){
-        prevMax == null;
-    }
-    else if(prevMax == minNode) prevMax = null;
-    if(prevMax == null){
-        curr == head;
-        while(curr.next != maxNode && curr.next != null ){
-            curr = curr.next;
+    // Now find maximum node and tail in the UPDATED list
+    Node maxNode = head;
+    Node prevMax = null;
+    curr = head;
+    prev = null;
+    Node tail = null;
+
+    while (curr != null) {
+        if (curr.data > maxNode.data) {
+            maxNode = curr;
+            prevMax = prev;
         }
-        if(curr.next == maxNode){
-            prevMax = curr;
-        }
+        prev = curr;
+        tail = curr;      // last node
+        curr = curr.next;
     }
-    if(maxNode.next != null){
-        if(prevMax.next != null){
+
+    // Move maxNode to tail (if not already tail)
+    if (maxNode != tail) {
+        // Remove maxNode from its position
+        if (prevMax != null) {
             prevMax.next = maxNode.next;
-        }
-        else{
+        } else {
+            // maxNode was at head
             head = maxNode.next;
-            Node*temp = head;
-            while(temp.next != null){
-                temp = temp.next;
-                temp.next = maxNode;
-                maxNode.next = null;
-            }
         }
+
+        // Attach at tail
+        tail.next = maxNode;
+        maxNode.next = null;
     }
+
+    return head;
 }
