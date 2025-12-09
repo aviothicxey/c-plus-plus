@@ -802,12 +802,38 @@ static Node shiftSmallLarge(Node head){
     Node * curr = head;
     while(curr != null){
         if(curr.data < minNode.data){
-            curr = minNode;
+            minNode = curr;
             prevMin = prev;
         }if( curr.data > maxNode.data){
-            curr = maxNode;
+            maxNode = curr;
             prevMax = prev;
         }
+        prev = curr;
+        curr = curr.next;
+
+    }
+    if(minNode != head){
+        if(prevMin != null){
+            prevMin.next = minNode.next;
+            minNode.next = head;
+            head = minNode;
+        }
+    }
+    if(maxNode == minNode) return ;
+    if(maxNode == head){
+        prevMax == null;
+    }
+    else if(prevMax == minNode) prevMax = null;
+    if(prevMax == null){
+        curr == head;
+        while(curr.next != maxNode && curr.next != null ){
+            curr = curr.next;
+        }
+        if(curr.next == maxNode){
+            prevMax = curr;
+        }
+    }
+    if(maxNode.next != null){
         
     }
 }
