@@ -945,5 +945,37 @@ class Solution {
 
     return newHead;
 }
+}
+
+//leetcode 92:
+public ListNode reverseBetween(ListNode head , int left , int right){
+    if(head == null || left == right) return head;
+
+    ListNode dummy = new ListNode(0);
+    dummy.next = head;
+     ListNode prev = dummy;
+
+    // Step 1: reach node before left
+    for (int i = 1; i < left; i++) {
+        prev = prev.next;
+    }
+
+    // Start reversing
+    ListNode curr = prev.next;
+    ListNode next = null;
+    ListNode prevNode = null;
+
+    for (int i = 0; i <= right - left; i++) {
+        next = curr.next;
+        curr.next = prevNode;
+        prevNode = curr;
+        curr = next;
+    }
+
+    // Fix connections
+    prev.next.next = curr;   // tail of reversed connects to remaining list
+    prev.next = prevNode;    // connect previous part to reversed head
+
+    return dummy.next;
 
 }
