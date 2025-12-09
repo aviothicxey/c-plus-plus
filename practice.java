@@ -834,6 +834,17 @@ static Node shiftSmallLarge(Node head){
         }
     }
     if(maxNode.next != null){
-        
+        if(prevMax.next != null){
+            prevMax.next = maxNode.next;
+        }
+        else{
+            head = maxNode.next;
+            Node*temp = head;
+            while(temp.next != null){
+                temp = temp.next;
+                temp.next = maxNode;
+                maxNode.next = null;
+            }
+        }
     }
 }
