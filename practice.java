@@ -880,3 +880,22 @@ public static boolean detectLoop(Node head){
 }
 
 //--leetcode 142:
+public Node detectCycle(Node head){
+    if(head == null ||  head.next ==null) return null;
+    Node slow = head;
+    Node fast = head;
+    while(fast != null && fast.next.next != null){
+        slow = slow.next ;
+        fast != fast.next.next;
+
+        if(slow == fast){
+            slow = head;
+            while(slow != fast){
+                slow = slow.next;
+                fast = fast.next;
+            }
+            return slow;
+        }
+    }
+    return null;
+}
