@@ -799,39 +799,37 @@ class Node {
         this.next = null;
     }
 }
-static Node shiftSmallLarge(Node head){
-    if(head == null || head.next == null){
+static Node shiftSmallLarge(Node head) {
+    // Edge cases: 0 or 1 node
+    if (head == null || head.next == null) {
         return head;
     }
-    //Find minimum node and its previous node
+
+    Node minNode = head;
     Node prevMin = null;
-    Node  prevMax = null;
-    Node  minNode = head;
-    Node  maxNode = head;
-    Node  curr = head;
-    while(curr != null){
-        if(curr.data < minNode.data){
+
+    Node curr = head;
+    Node prev = null;
+
+    while (curr != null) {
+        if (curr.data < minNode.data) {
             minNode = curr;
             prevMin = prev;
-        }if( curr.data > maxNode.data){
-            maxNode = curr;
-            prevMax = prev;
         }
         prev = curr;
         curr = curr.next;
+    }
 
-    }
-    //Move minNode to head (if not already head)
-    if(minNode != head){
+    if (minNode != head) {
         // Remove minNode from its current position
-        if(prevMin != null){
-            prevMin.next = minNode.next;}
-            //insert at head
-            minNode.next = head;
-            head = minNode;
-        
+        if (prevMin != null) {
+            prevMin.next = minNode.next;
+        }
+        // Insert at head
+        minNode.next = head;
+        head = minNode;
     }
-    // Now find maximum node and tail in the UPDATED list
+
     Node maxNode = head;
     Node prevMax = null;
     curr = head;
@@ -848,7 +846,6 @@ static Node shiftSmallLarge(Node head){
         curr = curr.next;
     }
 
-    // Move maxNode to tail (if not already tail)
     if (maxNode != tail) {
         // Remove maxNode from its position
         if (prevMax != null) {
