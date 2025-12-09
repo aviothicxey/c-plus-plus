@@ -777,7 +777,7 @@ class Result{
             Node next = curr.next;
             curr.next = prev ;
             prev = curr;
-            curr = nexxt;
+            curr = next;
         }
         Node p1 = head;
         Node p2 = prev;
@@ -861,4 +861,11 @@ static Node shiftSmallLarge(Node head) {
     }
 
     return head;
+}
+
+//find the loop in ll:
+
+//-- leetcode 141:
+public static boolean detectLoop(Node head){
+    
 }
