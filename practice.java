@@ -899,3 +899,22 @@ public Node detectCycle(Node head){
     }
     return null;
 }
+
+// reverse a linked list:
+
+//--leetcode 206 sol1:
+public Node reverseList(Node head){
+    Stack<Integer> st = new Stack<>();
+    Node temp = head;
+    while(temp!= null){
+        st.push(temp.val);
+        temp = temp.next;
+    }
+    temp = head;
+    while(temp != null){
+        temp.val = st.peek();
+        st.pop();
+        temp =temp.next;
+    }
+    return head;
+}
