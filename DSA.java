@@ -156,7 +156,7 @@ public class Solution{
         while(T-- > 0){
             int N = sc.nextInt();
             sc.nextLine();
-            Node head = null , tail = head;
+            Node head = null , tail = null;
             ArrayList<Node> list = new ArrayList<>();
             //read employee names and create linked list:
             for(int i = 0; i < N ; i++){
@@ -176,7 +176,7 @@ public class Solution{
             if(pos != -1){
                 tail.next = list.get(pos);
             }
-            Node special = specialEmployee(head);
+            Node special = SpecialEmployee(head);
             if(special == null)
                 System.out.println(-1);
             else
