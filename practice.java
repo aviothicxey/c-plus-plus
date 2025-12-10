@@ -1027,3 +1027,33 @@ class Solution {
         node.next = node.next.next;  
     }
 }
+
+// swap a dll:
+
+static void swapNodes(Node a , Node b){
+    if(a == null || b == null || a==b) return ;
+
+     //if a is not head:
+     if(a.prev != null){
+        a.prev.next = b;
+     }else{
+        head = b;
+     }
+     if(b.prev != null){
+        b.prev.next = a;
+     }
+     else{
+        head = a;
+     }
+     //swap prev pointers:
+     Node temp = a.prev;
+     a.prev = b.prev;
+     b.prev = temp;
+
+     //swap next pointers :
+     Node temp = a.next ;
+     a.next = b.next;
+     b.next = temp;
+
+     
+}
