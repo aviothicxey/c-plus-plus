@@ -1005,3 +1005,25 @@ public Node addTwoNumbers(Node l1 , Node l2){
     }
     return temp.next;
 }
+
+
+//delete a node in linked list given access to only that node:
+/* 
+problem:
+You are given a pointer to the node that must be deleted.
+You cannot access previous node, so you cannot unlink normally.
+solution:
+(You are not given head of the list, only the node to be deleted)
+
+trick:
+Copy the value of the next node into the current node,
+Then skip (delete) the next node.
+Because we cannot delete "this node" directly,
+so we convert it to the next node.
+*/
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;  
+    }
+}
