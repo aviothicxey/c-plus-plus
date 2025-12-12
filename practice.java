@@ -1033,7 +1033,7 @@ class Solution {
 
 // rotate dll by k nodes:
 public class Solution{
-    static Node rotate (Node head){
+    static Node rotate (Node head , int k){
         if(head == null || k == 0 ) return head;
 
         int n = 0 ; 
@@ -1044,7 +1044,8 @@ public class Solution{
         }
         k = k % n;
         if(k == 0) return head;
-        for(int i = 0 ; i < n-k ; i++){
+        temp = head;
+        for(int i = 1 ; i < n-k ; i++){
             temp = temp.next;
         }
         Node newHead = temp.next;
@@ -1052,7 +1053,7 @@ public class Solution{
         temp.next = null;
 
         Node tail = newHead;
-        while(tail != null){
+        while(tail.next != null){
             tail = tail.next;
         }
         tail.next = head;
