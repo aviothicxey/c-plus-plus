@@ -1117,3 +1117,48 @@ static Node rearrangeEvenOdd(Node head){
     return oddHead;
 }
 
+// check if given ll is circular or not :
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+public class Solution {
+
+    static boolean isCircular(Node head) {
+        if (head == null) return false; 
+
+        Node slow = head;       // tortoise
+        Node fast = head;       // hare
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;          // move 1 step
+            fast = fast.next.next;     // move 2 steps
+
+            if (slow == fast) {        // collision
+                return true;           
+            }
+        }
+
+        // fast reached null → not circular
+        return false;
+    }
+
+    public static void main(String[] args) {
+        // Testing
+        Node head = new Node(1);
+        Node second = new Node(2);
+        Node third = new Node(3);
+
+        head.next = second;
+        second.next = third;
+        third.next = head;  // Making it circular
+
+        System.out.println(isCircular(head));  // Output: true
+    }
+}
