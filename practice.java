@@ -1030,30 +1030,42 @@ class Solution {
 
 // swap a dll:
 
-static void swapNodes(Node a , Node b){
-    if(a == null || b == null || a==b) return ;
 
-     //if a is not head:
-     if(a.prev != null){
-        a.prev.next = b;
-     }else{
-        head = b;
-     }
-     if(b.prev != null){
-        b.prev.next = a;
-     }
-     else{
-        head = a;
-     }
-     //swap prev pointers:
-     Node temp = a.prev;
-     a.prev = b.prev;
-     b.prev = temp;
+// rotate dll by k nodes:
+public class Solution{
+    static Node rotate (Node head){
+        if(head == null || k == 0 ) return head;
 
-     //swap next pointers :
-     Node temp = a.next ;
-     a.next = b.next;
-     b.next = temp;
+        int n = 0 ; 
+        Node temp = head ;
+        while(temp != null){
+            n++;
+            temp = temp.next;
+        }
+        k = k % n;
+        if(k == 0) return head;
+        for(int i = 0 ; i < n-k ; i++){
+            temp = temp.next;
+        }
+        Node newHead = temp.next;
+        newHead.prev = null;
+        temp.next = null;
 
-     
+        Node tail = newHead;
+        while(tail != null){
+            tail = tail.next;
+        }
+        tail.next = head;
+        head.prev = tail;
+
+        return newHead;
+    }
+    public void printList(Node head){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
 }
