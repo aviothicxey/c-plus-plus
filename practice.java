@@ -1070,3 +1070,50 @@ public class Solution{
         System.out.println();
     }
 }
+
+// rearrange the even odd nodes of dll
+// dll:
+static Node rearrangeEvenOdd(Node head){
+    if(head == null || head.next == null) return head;
+
+    Node oddHead = null , oddTail = null, evenHead = null , evenTail = null;
+
+    Node curr = head;
+    int pos = 1;
+
+    while(curr != null){
+        Node next = curr.next; // save next pointer
+        //break links
+        curr.next = null;
+        curr.prev = null;
+
+        if(pos % 2 == 1){
+            if(oddHead == null){
+                oddHead = oddTail = curr;
+            }else{
+                oddTail.next = curr;
+                curr.prev = oddTail;
+                oddTail = curr;
+            }
+        }else{
+            if(evenHead == null){
+                evenHead = evenTail = curr;
+            }else{
+                evenTail.next = curr;
+                curr.prev = evenTail;
+                evenTail = curr;
+            }
+        }
+        curr = next;
+        pos++;
+    }
+    if(oddHead != null){
+        oddTail.next = evenHead;
+        if(evenHead!= null){
+        evenHead.prev = oddTail; 
+        }
+    }
+
+    return oddHead;
+}
+
