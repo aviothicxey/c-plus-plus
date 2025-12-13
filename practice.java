@@ -1162,3 +1162,30 @@ public class Solution {
         System.out.println(isCircular(head));  // Output: true
     }
 }
+
+//insert nodes in a circular linked list:
+
+
+
+
+
+//*random:
+//balanced parenthesis but return type is int :
+static int isBalanced(String s){
+    Stack<Character> st = new Stack<>();
+
+    for(char c: s.toCharArray()){
+        if(c =='(' || c=='['||c =='{') st.push(c);
+        else if(c== ')'|| c== ']'||c =='}'){
+            if(st.isEmpty()) return 0;
+
+            char top = st.pop();
+
+            if ((c == ')' && top != '(') ||
+            (c == '}' && top != '{') ||
+            (c == ']' && top != '[')) return 0;
+        }
+    }
+    if(st.isEmpty()) return 1;
+    return 0;
+}
