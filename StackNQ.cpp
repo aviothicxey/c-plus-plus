@@ -19,12 +19,32 @@
 using namespace std;
 class stack{
     int top = -1 ;
-    vector <int> st[10];
+    int st[10];
     public:
-    void push(int data){
+    void push(int x){
         if(top >= 10){
-            top = top+1;
-            st[top] = data;
+            cout<<"stack overflow"<<endl;
+            return;
         }
+        top = top+1;
+        st[top] = x;
+    }
+    int top(){
+        if(top == -1){
+            return -1;
+        }
+        return st[top];
+    }
+    void pop(){
+        if(top == -1){
+            return;
+        }
+        top = top-1;
+    }
+    int size(){
+        return top + 1;
     }
 };
+//stack using arrays is not dynamic in nature...takes extra spaces . 
+
+//queue using arrays:
