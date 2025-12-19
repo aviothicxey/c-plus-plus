@@ -48,3 +48,84 @@ class stack{
 //stack using arrays is not dynamic in nature...takes extra spaces . 
 
 //queue using arrays:
+
+class q{
+int size = 10;
+int q[10];
+int curr_size= 0;
+int start = -1;
+int end = -1;
+void push(int x){
+    if(curr_size == size){
+
+    }
+    if(curr_size = 0){
+        start = 0 ; end = 0 ;
+    }
+    else{
+        end = (end+1)% size;
+    }
+    q[end] = x ;
+    curr_size += 1;
+}
+void pop(){
+    if(curr_size == 0){
+        cout<<"q is empty";
+    }
+    int el = q[start]; // storing the element here...
+    if(curr_size == 1){ // this will destroy the queue so make sure to store the element somewhere
+        start = end = -1;
+    }else{
+        start = (start+1) % size;
+        curr_size -= 1;
+    }
+    cout<<el;
+}
+int top(){
+    if(curr_size == 0){
+        return 0;
+    }
+    return q[start];
+}
+int size(){
+    return curr_size;
+}
+};
+
+//stack using linked list:
+class Node{
+    public:
+    int data;
+    Node*next;
+    Node(int data1 , Node* next1){
+        data = data1;
+        next = next1;
+    }
+    Node(int data1){
+        data = data1;
+        next = NULL;
+    }
+};
+class stack{
+    Node* top = NULL;
+    int size = 0;
+    public:
+    void push(int x){
+        Node* temp = new Node(x);
+        temp->next = top;
+        top = temp;
+        size = size + 1;
+    }
+    void pop(){
+        Node * temp = top;
+        top = top->next;
+        delete temp;
+        size = size -1;
+    }
+    int top(){
+        return top->data;
+    }
+    int size(){
+        return size;
+    }
+};
