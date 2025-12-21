@@ -129,3 +129,6 @@ class stack{
         return size;
     }
 };
+
+// queue using stack:
+  
