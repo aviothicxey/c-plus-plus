@@ -131,3 +131,40 @@ class postfix2infix{
         return st.peek();
     }
 }
+
+
+//prefix to infix:
+import java.util.Stack;
+
+class prefix2infix {
+
+    static boolean isOperator(char ch) {
+        return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^';
+    }
+
+    static String prefixToInfix(String s) {
+
+        Stack<String> st = new Stack<>();
+
+        // Traverse from right to left
+        for (int i = s.length() - 1; i >= 0; i--) {
+            char ch = s.charAt(i);
+
+            // Operand
+            if (Character.isLetterOrDigit(ch)) {
+                st.push(String.valueOf(ch));
+            }
+
+            // Operator
+            else if (isOperator(ch)) {
+                String op1 = st.pop();
+                String op2 = st.pop();
+
+                String exp = "(" + op1 + ch + op2 + ")";
+                st.push(exp);
+            }
+        }
+
+        return st.peek();
+    }
+}
