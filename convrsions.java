@@ -58,9 +58,9 @@ class InfixToPostfix {
 // infix to prefix:
 class infix2Prefix{
 static int priority(char ch){
-    if(ch= '+' || ch = '-') return 1;
-    if(ch = '*' || ch = '/') return 2;
-    if(ch = '^')return 3;
+    if(ch== '+' || ch == '-') return 1;
+    if(ch == '*' || ch == '/') return 2;
+    if(ch == '^')return 3;
     return -1;
 }
 static String infixToPrefix(String s){
@@ -84,9 +84,9 @@ static String infixToPrefix(String s){
         else if(ch == '('){
             st.push(ch);
         }
-        else if(ch = ')'){
+        else if(ch == ')'){
             while(!st.isEmpty() && st.peek()!= '('){
-                st.pop();
+                 postfix.append(st.pop());
             }
             st.pop();
         }
@@ -100,7 +100,34 @@ static String infixToPrefix(String s){
     while(!st.isEmpty()){
         postfix.append(st.pop());
     }
-    return postfix.reverse.toString();
+    return postfix.reverse().toString();
 }
 
+}
+
+//postfix to infix:
+class postfix2infix{
+    public static boolean isOperator(char ch){
+        return ch == '+' || ch == '-' || ch == '/' || ch == '^' || ch == '*';
+    }
+
+    public static String postfixToInfix(String s){
+        Stack<String> st = new Stack<>();
+
+        for(int i = 0 ; i < s.length() ; i++){
+            char ch = s.charAt(i);
+
+            if(Character.isLetterOrDigit(ch)){
+                st.push(String.valueOf(ch));
+            }
+            else if(isOperator(ch)){
+                String op2 = st.pop();
+                String op1 = st.pop();
+                String exp = "(" + op1 + ch + op2 + ")";
+
+                st.push(exp);
+            }
+        }
+        return st.peek();
+    }
 }
