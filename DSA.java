@@ -219,3 +219,21 @@ Math.min protects the last group if size < k */
         for(int x : arr) System.out.print(x + " ");
     }
 }
+
+//Airport Mishap (Missing Bag ID using XOR)
+
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while(T-->0){
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            int xor = 0;
+            for(int i = 0 ; i < n ;i++) xor ^= sc.nextInt();
+            for(int i = 0 ; i < m ;i++) xor ^= sc.nextInt();
+
+            System.out.println(xor);
+        }
+    }
+}
