@@ -237,3 +237,32 @@ class Main{
         }
     }
 }
+
+// Upper Triangular Matrix Verification
+
+class main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[][] mat = new int[n][n];
+        boolean isUpper = true;
+
+        for(int i = 0 ; i < n ; i++){
+            for(int j = 0 ; j < n ; j++){
+                mat[i][j] = sc.nextInt();
+                if(i > j && mat[i][j] != 0){
+                    isUpper = false;
+                }
+            }
+        }
+        for(int[] row : mat){
+            for(int val : row) System.out.print(val + " ");
+            System.out.println();
+        }
+         if (isUpper)
+            System.out.println("upper triangular matrix");
+        else
+            System.out.println("not an upper triangular matrix");
+    }
+}
