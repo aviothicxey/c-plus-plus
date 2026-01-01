@@ -266,3 +266,33 @@ class main{
             System.out.println("not an upper triangular matrix");
     }
 }
+
+// magic card game ( postfix evaluation)
+
+class Main{
+    public ststic void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        int T = sc.nextInt();
+
+        while(T-- >0){
+            String exp = sc.next();
+            Stack<Integer> st = new Stack<>();
+            for(char ch : exp.toCharArray()){
+                if(Character.isLetterOrDigit(ch)){
+                    st.push(ch -'0');
+                }else{
+                    int b = st.pop();
+                    int a = st.pop();
+                    switch(ch){
+                        case '+' : st.push(a+b) ; break;
+                        case '-' : st.push(a-b); break;
+                        case '*' : st.push(a*b) ; break;
+                        case '/' : st.push(a/b) ; break;
+                        case '^' : st.push((int)Math.pow(a,b)); break;
+                    }
+                }
+            }
+            System.out.println(st.pop());
+        }
+    }
+}
