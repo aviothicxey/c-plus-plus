@@ -321,3 +321,34 @@ class Main {
         }
     }
 }
+// Action-First Math Processor (Prefix Evaluation)
+
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        while(T-->0){
+            String exp = sc.nextInt();
+            Stack<Integer> st = new Stack<>();
+
+            for(int i = exp.length() -1 ; i >= 0 ; i--){
+                char ch = exp.xharAt(i);
+                if(Character.isDigit(ch)){
+                    st.push(ch-'0');
+                }else{
+                    int a = st.pop();
+                    int b = st.pop();
+                    switch(ch){
+                        case '+' : st.push(a + b) ; break;
+                        case '-' : st.push(a-b) ; break;
+                        case ' * ' : st.push(a * b) ; break;
+                        case '/' : st.push(a / b) ; break;
+                        case '^' : st.push((int)Math.pow(a,b));break;
+                    }
+                }
+            }
+            System.out.println(st.pop());
+        }
+    }
+}
