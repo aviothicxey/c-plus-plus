@@ -357,6 +357,42 @@ class Main{
 
 class Main{
     public static void main(String[] args){
-        
+        Scanner sc = new Scanner(System.in);
+        HashMap<String , Integer> map = new HashMap<>();
+
+        int n = sc.nextInt();
+        for(int i = 0 ; i < n ; i++){
+            String id = sc.next();
+            map.put(id,map.getOrDefault(id,0) +1);
+        }
+        for(String key : map.keySet()){
+            if(map.get(key) > 1){
+                System.out.println(key);
+            }
+        }
+    }
+}
+
+// Brand Logo of Company
+
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        while(T-->0){
+            String Husband = sc.next();
+            String wife = sc.next();
+            char result = 'h';
+            for(int i = 0 ; i < Husband.length() ;i++){
+                char ch = Husband.charAt(i);
+
+                if(wife.indexOf(ch)!= -1){
+                    result = ch;
+                    break;
+                }
+            }
+            System.out.println(result);
+        }
     }
 }
