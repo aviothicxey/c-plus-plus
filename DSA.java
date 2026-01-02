@@ -396,3 +396,34 @@ class Main{
         }
     }
 }
+
+// Decode Enemy Message
+class Main{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        sc.nextLine();
+
+        while(T-->0){
+            String line = sc.nextLine();
+            Stack<Character> st = new Stack<>();
+
+            for(int i = 0 ; i < line.length();i++){
+                char ch = line.charAt(i);
+
+                if(ch != ' '){
+                    st.push(ch);
+                }else{
+                   while(!st.isEmpty()){
+                    System.out.print(st.pop());
+                   } 
+                   System.out.print(" ");
+                }
+            }
+            while(!st.isEmpty()){
+                System.out.print(st.pop());
+            }
+            System.out.println();
+        }
+    }
+}
