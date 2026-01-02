@@ -270,7 +270,7 @@ class main{
 // magic card game ( postfix evaluation)
 
 class Main{
-    public ststic void main(String[] args){
+    public static void main(String[] args){
         Scanner sc = new Scanner (System.in);
         int T = sc.nextInt();
 
@@ -278,7 +278,7 @@ class Main{
             String exp = sc.next();
             Stack<Integer> st = new Stack<>();
             for(char ch : exp.toCharArray()){
-                if(Character.isLetterOrDigit(ch)){
+                if(Character.isDigit(ch)){
                     st.push(ch -'0');
                 }else{
                     int b = st.pop();
@@ -329,11 +329,11 @@ class Main{
         int T = sc.nextInt();
 
         while(T-->0){
-            String exp = sc.nextInt();
+            String exp = sc.next();
             Stack<Integer> st = new Stack<>();
 
             for(int i = exp.length() -1 ; i >= 0 ; i--){
-                char ch = exp.xharAt(i);
+                char ch = exp.charAt(i);
                 if(Character.isDigit(ch)){
                     st.push(ch-'0');
                 }else{
@@ -342,7 +342,7 @@ class Main{
                     switch(ch){
                         case '+' : st.push(a + b) ; break;
                         case '-' : st.push(a-b) ; break;
-                        case ' * ' : st.push(a * b) ; break;
+                        case '*' : st.push(a * b) ; break;
                         case '/' : st.push(a / b) ; break;
                         case '^' : st.push((int)Math.pow(a,b));break;
                     }
@@ -350,5 +350,13 @@ class Main{
             }
             System.out.println(st.pop());
         }
+    }
+}
+
+// Duplicate Flyer Detection
+
+class Main{
+    public static void main(String[] args){
+        
     }
 }
