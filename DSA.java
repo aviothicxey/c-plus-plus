@@ -295,4 +295,29 @@ class Main{
             System.out.println(st.pop());
         }
     }
+} 
+
+// Cafeteria Tray Dispenser (Stack Operations)
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        while(T-->0){
+            int Q = sc.nextInt();
+            Stack<Integer> st = new Stack<>();
+
+            while(Q-- >0){
+                int type = sc.nextInt();
+                if(type == 1){
+                    st.push(sc.nextInt());
+                }
+                else{
+                    if(st.isEmpty()) System.out.print(-1);
+                    else System.out.print(st.pop()+ " ");
+                }
+            }
+            System.out.println();
+        }
+    }
 }
