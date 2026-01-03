@@ -721,6 +721,29 @@ class Main{
 }
 
 //Find the Special Employee
-class Main{
-    
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            String[] names = new String[N];
+
+            for (int i = 0; i < N; i++) {
+                names[i] = sc.next();
+            }
+
+            int pos = sc.nextInt();
+
+            if (pos == -1 || pos >= N) {
+                System.out.println("-1");
+            } else {
+                System.out.println(names[pos]);
+            }
+        }
+        sc.close();
+    }
 }
