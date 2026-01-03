@@ -621,3 +621,41 @@ class Main{
     }
 }
 
+//search in rotated Sorted Array
+class Main{
+    private static int searchRotatedSortedArray(int arr[] , int x){
+        int low = 0 ;
+        int high = arr.length-1;
+        while(low <= high){
+            int mid = low + (high - low) /2;
+            if(arr[mid] == x) return mid;
+
+            if(arr[low] <= arr[mid]){
+                if(arr[mid] > x && x >= arr[low]){
+                    high = mid -1;
+                }
+                else low = mid +1;
+            }else{
+                if(arr[mid] < x && x <= arr[high]) low = mid + 1;
+                else high = mid -1;
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        int T = sc.nextInt();
+
+        while(T-->0){
+            int k = sc.nextInt();
+            int N = sc.nextInt();
+
+            int[] arr = new int[N];
+
+            for(int i = 0 ; i < N ;i++){
+                arr[i] = sc.nextInt();
+            }
+            System.out.println(searchRotatedSortedArray(arr,k));
+        }
+    }
+}
