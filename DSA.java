@@ -547,3 +547,30 @@ class Main{
         }
     }
 }
+
+
+// total search time:
+
+class Main{
+    public static void main (String[] args){
+        Scanner sc = new Scanner (System.in);
+        int T =sc.nextInt();
+
+        while(T-->0){
+            int N = sc.nextInt();
+            HashMap<Integer , Integer> map = new HashMap<>();
+            for(int i = 0 ; i < N ; i++){
+                map.put(sc.nextInt() , i);
+            }
+            int K = sc.nextInt();
+            long time = 0;
+
+            for(int i = 0 ; i < K ;i++){
+                int x = sc.nextInt();
+                time+= map.getOrDefault(x,N);
+            }
+            System.out.println(time);
+        }
+    }
+}
+
