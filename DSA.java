@@ -574,3 +574,50 @@ class Main{
     }
 }
 
+// The Sensor Data Peak
+
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int arr[] = new int[5];
+        for(int i = 0 ; i < 5 ; i++){
+            arr[i] = sc.nextInt();
+        }
+        int maxi = arr[0];
+        for(int i = 0 ; i < 5 ;i++){
+            if(arr[i] > maxi){
+                maxi = arr[i];
+            }
+        }
+        System.out.println(maxi);
+    }
+}
+
+//The Voting Consensus Audit:
+class Main{
+    private static int  getMajorityElement(int arr[]){
+        int candidate = 0 ;
+        int cnt = 0;
+        for(int x : arr) {
+            if(cnt ==0) candidate = x;
+
+            if ( x == candidate) cnt++;
+            else cnt--;
+
+        }
+       cnt = 0 ;
+       for(int x :arr) if (x== candidate) cnt++;
+       return (cnt > arr.length/2) ? candidate : -1;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        int[] arr = new int[N];
+        for(int i = 0 ; i < N ; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(getMajorityElement(arr));
+    }
+}
+
