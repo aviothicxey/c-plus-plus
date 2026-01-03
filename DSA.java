@@ -660,3 +660,67 @@ class Main{
     }
 }
 
+// make array positive:
+
+
+
+
+
+
+//day 3:
+// energy required in insertion sort:
+class Main{
+    private static int EnergyRequired(int arr[]){
+        int n = arr.length;
+        int swaps = 0;
+        for(int i = 1 ; i < n ; i++){
+            int key =  arr[i] ;
+            int j = i - 1;
+            while(j >= 0 && arr[j] > key){
+                arr[j+1] = arr[j];
+                j--;
+                swaps++;
+            }
+            arr[j+1] = key;
+        }
+        return swaps * 4 ;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        while(T-->0){
+            int N = sc.nextInt();
+            int [] arr = new int[N];
+            for(int i = 0 ; i< N ; i++){
+                arr[i] = sc.nextInt();
+            }
+            System.out.println(EnergyRequired(arr));
+        }
+    }
+}
+
+// total search time:
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i = 0 ; i < N ; i++){
+            map.put(sc.nextInt() , i);
+        }
+        int K = sc.nextInt();
+        long time = 0;
+        for(int i = 0 ; i < K ; i++){
+            int x = sc.nextInt();
+            time += map.getOrDefault(x , N);
+        }
+        System.out.println(time);
+    }
+}
+
+//Find the Special Employee
+class Main{
+    
+}
