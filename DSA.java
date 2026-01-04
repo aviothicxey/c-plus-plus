@@ -790,3 +790,24 @@ class Main{
         return result.toString();
     }
 }
+
+
+// Measure Name Obsession
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        int T = sc.nextInt();
+        while(T-- >0){
+            String str = sc.next();
+            String name = sc.next();
+
+            String words[] = str.trim().split("\\s+");
+            int cnt = 0;
+            for(int i = 0 ; i < words.length ; i++){
+                if(words[i].equals(name)) cnt++;
+            }
+            System.out.println(cnt);
+        }
+        sc.close();
+    }
+}
