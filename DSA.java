@@ -767,3 +767,26 @@ class Solution{
         return st.isEmpty();
     }
 }
+
+// The Genetic Sequence Reporter (String Compression)
+class Main{
+    static String compressString(String str){
+        StringBuilder result = new StringBuilder();
+        int n = str.length();
+
+        for(int i = 0 ; i < n; i++){
+            char ch = str.charAt(i);
+            int cnt = 1 ;
+
+            while(i + 1 < n && str.charAt(i+1) == ch){
+                cnt++;
+                i++;
+            }
+            result.append(ch);
+            if(cnt > 1){
+                result.append(cnt);
+            }
+        }
+        return result.toString();
+    }
+}
