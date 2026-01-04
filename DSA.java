@@ -811,3 +811,36 @@ class Main{
         sc.close();
     }
 }
+
+// the secret scribe code check: ( palindrome linked list):
+
+class Main{
+    public static boolean palindrome(Node head){
+        Node slow = head ;
+        Node fast = head ;
+        while(fast != null && fast.next != null){
+            slow = slow.next ;
+            fast = fast.next.next;
+        }
+        Node prev = null;
+        Node next = null;
+        Node curr = slow ;
+        while(curr != null){
+            next = curr.next ;
+            curr.next = prev ;
+            prev = curr;
+            curr = next;
+        }
+        Node p1 = head;
+        Node p2 = prev;
+        while(p2 != null){
+            if(p1.val != p2.val){
+                return false;
+            }
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return true;
+    }
+}
+
