@@ -172,3 +172,26 @@ class Main{
 }
 
 //q7:
+class Main{
+    private static boolean isPalindrome(int n ){
+        int temp = n;
+        int rev = 0;
+        while(n>0){
+            int digit = n % 10;
+            rev = rev * 10 + digit;
+            n/= 10;
+        }
+        return temp == rev;
+    }
+}
+
+// q8:
+class Main{
+    public static int factorial(int n){
+        if(n == 0 || n == 1) return 1;
+        int fact = n * factorial(n -1) ;
+        return fact;
+    }
+}
+
+// q9:
