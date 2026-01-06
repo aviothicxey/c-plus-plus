@@ -125,3 +125,50 @@ class Main{
 }
 
 // q6 
+class Main{
+    private static void Sortt(int[] arr){
+        int n = arr.length;
+        for(int i = 1 ; i< n ; i++){
+            int key = arr[i];
+            int j = i -1;
+            while(j >= 0 && arr[j] > key){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = key;
+        }
+    }
+    private static int Search(int[] arr , int target){
+        int low = 0 ; int high = arr.length -1;
+        while(low <= high){
+            int mid = low + (high -low) /2;
+            if(arr[mid] == target){
+                return mid;
+            }
+            else if(arr[mid] < target){
+                low = mid +1;
+            }
+            else high = mid -1;
+        }
+        return -1;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i = 0 ; i < n ; i++){
+            arr[i] = sc.nextInt();
+        }
+        int x = sc.nextInt();
+         Sortt(arr);
+
+        System.out.print("Sorted Array: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        System.out.println("Element " + x + " is at index: " + Search(arr,x));
+    }
+}
+
+//q7:
