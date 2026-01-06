@@ -231,3 +231,21 @@ class Main{
         return "No Cycle";
     }
 }
+
+
+// q11:
+class Main{
+    public static String toUpperCase(String s){
+        String res = "";
+        for(int i = 0 ; i < s.length() ; i++){
+            char ch = s.charAt(i);
+            if(ch >='a' && ch <= 'z'){
+                ch = (char) ( ch-32);
+            }
+            res += ch;
+        }
+        return res;
+    }
+}
+
+//q12:
