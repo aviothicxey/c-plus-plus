@@ -844,3 +844,37 @@ class Main{
     }
 }
 
+// remove duplicates from an unsorted linked list:
+class Main{
+    public static Node removeDuplicates(Node head){
+        if(head == null || head.next == null) return head;
+
+        Node curr = head ;
+        while(curr != null){
+            Node runner = curr;
+            while(runner.next != null){
+                if(runner.next.data == curr.data){
+                    runner.next = runner.next.next;
+                }else{
+                    runner = runner.next;
+                }
+            }curr = curr.next;
+        }
+        return head;
+    }
+}
+
+// Remove Duplicates from a Sorted Doubly Linked List:
+
+class Main{
+    public static Node removeDuplicatesDLL(Node head){
+        if(head == null || head.next == null) return head;
+        Node curr = head;
+        while(curr.next != null){
+            if(curr.data == curr.next.data){
+                curr.prev.next = curr.next.next;
+            }
+        }
+        return head;
+    }
+}
