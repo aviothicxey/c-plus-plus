@@ -216,3 +216,18 @@ class Main{
 }
 
 //q 10:
+class Main{
+    public static String Detect_Cycle(Node head){
+        Node slow = head ;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next ;
+            fast = fast.next.next;
+
+            if(slow == fast){
+                return "Cycle Detected";
+            }
+        }
+        return "No Cycle";
+    }
+}
