@@ -193,5 +193,26 @@ class Main{
         return fact;
     }
 }
-
+         
 // q9:
+class Main{
+    public static String isValid(String s){
+        if(s.length() == 0) return "Balanced";
+        Stack<Character> st = new Stack<>();
+        for(int i = 0 ; i < s.length() ; i++){
+            char ch = s.charAt(i);
+            if(ch =='{' || ch == '[' || ch =='(' ) st.push(ch);
+            else{
+                if(st.isEmpty()) return "Not Balanced";
+                char c = st.pop();
+                    if(ch == '}' && c != '{' || ch ==']' && c !='[' || ch ==')' && c !='('){
+                        return "Not Balanced";
+                    }
+            }
+        }
+        if(st.isEmpty()) return "Balanced";
+        return "Not Balanced";
+    }
+}
+
+//q 10:
