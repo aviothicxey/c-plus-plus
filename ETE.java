@@ -60,3 +60,40 @@ class Main{
         }
     }
 }
+
+// q4:
+class Solution{
+    public static boolean isPalindrome(Node head){
+        Node slow = head ;
+        Node fast = head ;
+        while (fast != null && fast.next != null){
+            slow = slow.next ;
+            fast = fast.next.next;
+        }
+
+        if(fast !=null){
+            slow = slow.next;
+        }
+        Node curr = slow ;
+        Node prev = null ;
+        Node next = null;
+
+        while (curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node p1 = prev ;
+        Node p2 = head;
+        while ( p1 != null && p2 != null){
+            if(p1.val != p2.val){
+                return false;
+            }
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return true;
+    }
+}
+
