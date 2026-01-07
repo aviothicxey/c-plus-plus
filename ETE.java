@@ -240,7 +240,7 @@ class Main{
         for(int i = 0 ; i < s.length() ; i++){
             char ch = s.charAt(i);
             if(ch >='a' && ch <= 'z'){
-                ch = (char) ( ch-32);
+                ch = (char) (ch-32);
             }
             res += ch;
         }
@@ -249,3 +249,55 @@ class Main{
 }
 
 //q12:
+class Main{
+    private static int[] nge(int arr[]){
+        int n = arr.length;
+        Stack<Integer> st = new Stack<>();
+        int[] nge = new int[n];
+        for(int i = n -1 ; i >= 0 ; i-- ){
+            while(!st.isEmpty() && arr[st.peek()] <= arr[i]){
+                st.pop();
+            }
+            nge[i] = st.isEmpty() ? -1 : arr[st.peek()];
+            st.push(i);
+        }
+        return nge;
+    }
+}
+
+//q13 
+class Main{
+    public static int sumOfDigits(int n){
+        int sum = 0;
+        while( n!= 0){
+            int digit = n % 10 ;
+            sum += digit;
+            n = n /10;
+        }
+        return sum;
+    }
+}
+
+//q14 : largest element in an array
+//q15 : middle element of ll
+
+// q16 : remove nth node from end of ll : 
+class Main{
+    public static Node removenthfromend(Node head , int n){
+        if(head == null)return null;
+        Node temp = head ;
+        int cnt = 0;
+        while(temp != null){
+            cnt++;
+            temp = temp.next ;
+        }
+        if(n== cnt){return head.next;}
+        temp = head;
+        for(int i =1 ; i <cnt - n ; i++){
+            temp = temp.next;
+        }       
+        temp.next = temp.next.next;
+        return head;
+    }
+}
+// q17 
