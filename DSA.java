@@ -1,4 +1,4 @@
-swap the sub array in a array till k where k is 3
+//swap the sub array in a array till k where k is 3
 import java.util.Arrays;
 public class SlidingWindow{
     public static void swapSubArray(int[] arr , int k){
@@ -13,11 +13,11 @@ public class SlidingWindow{
                 left++;
                 right--;
             }
-        }
+        }+
     }
 }
 
-/*
+/* 
 Q1. Energy Required for Insertion Sort
 A shopkeeper has & products kept on his shelf. He assigns a unique rank to each product based on its annual sales. Now the shopkeeper wants to sort all the products in the increasing order of their ranks, but because his products are a bit heavy, so he needs to know how much of his energy will be spent on sorting
 all the N products using the Insertion Sort algorithm.
@@ -236,7 +236,8 @@ class Main{
             System.out.println(xor);
         }
     }
-}
+    
+
 
 // Upper Triangular Matrix Verification
 
@@ -747,7 +748,25 @@ class Main {
         sc.close();
     }
 }
+public static Node specialEmployee(Node head){
+    Node slow = head;
+    Node fast = head;
+    while(fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
 
+        if(slow == fast) break;
+    }
+    if(fast == null || fast.next == null){
+        return null;
+    }
+    slow  = head;
+    while(slow != fast){
+        slow = slow.next;
+        fast = fast.next;
+    }
+    return slow;
+}
 // valid parentheses:
 
 class Solution{
