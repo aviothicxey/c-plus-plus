@@ -123,7 +123,17 @@ class Main{
 
     }
 }
+//-----------------prctice----------------//
+public static Node mergeList(Node l1, Node l2){
+    if(l1 == null) return l2;
+    if(l2 == null) return l1;
 
+    Node dummy = new Node(0);
+    Node temp = dummy;
+    while (l1 != null && l2 != null ){
+        
+    }
+}
 // q6 
 class Main{
     private static void Sortt(int[] arr){

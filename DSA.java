@@ -237,7 +237,7 @@ class Main{
         }
     }
     
-
+}
 
 // Upper Triangular Matrix Verification
 
@@ -888,10 +888,17 @@ class Main{
 class Main{
     public static Node removeDuplicatesDLL(Node head){
         if(head == null || head.next == null) return head;
-        Node curr = head;
+        Node curr = head ;
         while(curr.next != null){
             if(curr.data == curr.next.data){
-                curr.prev.next = curr.next.next;
+                Node dup = curr.next;
+                curr.next = dup.next;
+
+                if(dup.next != null){
+                    dup.next.prev = curr;
+                }
+            } else{
+                    curr = curr.next;
             }
         }
         return head;

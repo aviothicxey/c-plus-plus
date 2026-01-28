@@ -25,7 +25,6 @@ class Employee{
             cout << "Invalid grade entered. No bonus applied.\n";
         }
     }
-
     void displaySalary() {
         cout << "Final Salary: " << salary << endl;
     }
