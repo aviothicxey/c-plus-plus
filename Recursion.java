@@ -60,6 +60,12 @@ public class Recursion{
         arr[i] = arr[j];
         arr[j] = tmp;
     }
+    // check if the string is palindrome or not:
+    static boolean isPalindrome(int i,int n ,String s){
+        if(i >= n/2) return true;
+        if(s.charAt(i) != s.charAt(n-i-1)) return false;
+        return isPalindrome(i+1, n, s);
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt() ;
@@ -78,6 +84,12 @@ public class Recursion{
             arr[i] = sc.nextInt();
          }
          reverseArray(0, n, arr);
+         for(int i = 0 ; i < n ; i++){
+            System.out.println(arr[i]);
+         }
+         String x = sc.next();
+         boolean p = isPalindrome(0, x.length(), x);
+         System.out.println(p);
          sc.close();
     }
     
