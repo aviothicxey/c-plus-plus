@@ -66,6 +66,13 @@ public class Recursion{
         if(s.charAt(i) != s.charAt(n-i-1)) return false;
         return isPalindrome(i+1, n, s);
     }
+    //FIBONNACI NUMBER:
+    static int fibonacci(int n){
+        if(n<=1)return n;
+        int last = fibonacci(n-1);
+        int slast = fibonacci(n-2);
+        return last + slast;
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt() ;
@@ -90,6 +97,7 @@ public class Recursion{
          String x = sc.next();
          boolean p = isPalindrome(0, x.length(), x);
          System.out.println(p);
+         System.out.println(fibonacci(5));
          sc.close();
     }
     
